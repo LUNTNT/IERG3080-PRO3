@@ -12,7 +12,7 @@ namespace IERG3080_PRO3
   public class MongoDB
   {
         protected MongoClient client = new MongoClient("localhost:27017");
-        protected MongoClient.GetDatabase db = client.GetDatabase("IERG3080_DB");
+        protected var db = client.GetDatabase("IERG3080_DB");
 
   }
 
