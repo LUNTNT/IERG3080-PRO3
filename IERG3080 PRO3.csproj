@@ -132,6 +132,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="IERG3080.cs" />
     <Compile Include="MainWindow.xaml.cs">
