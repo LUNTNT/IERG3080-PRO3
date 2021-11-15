@@ -15,9 +15,6 @@ namespace Database
 
         protected static MongoClient client = new MongoClient(connection);
         protected static IMongoDatabase db = client.GetDatabase("3080Proj");
-
-        
-        
         
         public MongoDB()
         {
