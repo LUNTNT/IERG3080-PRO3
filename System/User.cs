@@ -16,7 +16,28 @@ namespace User
 
         public bool VerifyLogin(string userID, string password)
         {
-            
+            List<Model.Users> finduser = UsersCol.GetOneByID(userID);
+            if (finduser[0] == null)
+            {
+                return false;
+            }
+
+            if (finduser[0].password != password)
+            {
+                return false;
+            }
+                
+            return true;
+        }
+
+        public bool Isadmin(string userID)
+        {
+            List<Model.Users> finduser = UsersCol.GetOneByID(userID);
+            if (finduser[0].userType != "admin")
+            {
+                return false;
+            }
+
             return true;
         }
 

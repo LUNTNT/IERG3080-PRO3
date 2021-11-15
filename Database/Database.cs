@@ -44,7 +44,6 @@ namespace Database
         {
             var filter = Builders<Model.Users>.Filter.Eq("userID", userID);
             var users = UserColl.Find(filter).ToList();
-
             return users;
         }
 
@@ -151,6 +150,22 @@ namespace Database
         public List<Model.Submissions> GetOneByID(string ID)
         {
             var filter = Builders<Model.Submissions>.Filter.Eq("ID", ID);
+            var submissions = SubmissionColl.Find(filter).ToList();
+
+            return submissions;
+        }
+
+        public List<Model.Submissions> GetOneByProblem(string problemID)
+        {
+            var filter = Builders<Model.Submissions>.Filter.Eq("ID", problemID);
+            var submissions = SubmissionColl.Find(filter).ToList();
+
+            return submissions;
+        }
+
+        public List<Model.Submissions> GetOneByUser(string userID)
+        {
+            var filter = Builders<Model.Submissions>.Filter.Eq("ID", userID);
             var submissions = SubmissionColl.Find(filter).ToList();
 
             return submissions;

@@ -23,7 +23,7 @@ namespace Model
         public string author;
 
         public int trial;
-        public int difficulty;
+        public string difficulty;
         public int timeLimit;
         public int memoryLimit;
 

@@ -72,6 +72,7 @@
     <Compile Include="Interface\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="System\Submission.cs" />
     <Compile Include="System\Problem.cs" />
     <Compile Include="System\JudgeSystem.cs" />
     <Compile Include="System\User.cs" />
