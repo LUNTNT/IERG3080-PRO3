@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IERG3080_PRO3.Interface
+namespace IERG3080_PRO3
 {
     /// <summary>
     /// Login.xaml 的互動邏輯
@@ -23,6 +23,11 @@ namespace IERG3080_PRO3.Interface
         public Login()
         {
             InitializeComponent();
+        }
+
+        internal void Show()
+        {
+            throw new NotImplementedException();
         }
     }
 }

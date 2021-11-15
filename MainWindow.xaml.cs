@@ -24,7 +24,13 @@ namespace IERG3080_PRO3
         {
             InitializeComponent();
         }
+        private void OpenLoginPage(object sender, RoutedEventArgs s)
+        {
+            Login objLogin = new Login();
+            objLogin.Show();
 
+
+        }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
