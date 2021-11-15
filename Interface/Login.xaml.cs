@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IERG3080_PRO3
+namespace IERG3080_PRO3.Interface
 {
     /// <summary>
-    /// MainWindow.xaml 的互動邏輯
+    /// Login.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Login : Page
     {
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
         }
