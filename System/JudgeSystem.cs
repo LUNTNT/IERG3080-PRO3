@@ -14,7 +14,7 @@ namespace JudgeSystem
     // Users can log out after use.
     public class JudgeSystem
     {
-        //After done front end put into it
+        //After done front end and put into it
         Problem.ProgramProblem problems;
         User.User users;
         

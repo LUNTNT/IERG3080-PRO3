@@ -39,7 +39,7 @@ namespace Model
         public string userID;
         public string problemID;
 
-        public string program;
-        public int result;
+        public string programpath;
+        public string result;
     }
 }

@@ -29,7 +29,6 @@ namespace User
                 
             return true;
         }
-
         public bool Isadmin(string userID)
         {
             List<Model.Users> finduser = UsersCol.GetOneByID(userID);

@@ -12,6 +12,7 @@ namespace Problem
     public class ProgramProblem
     {
         protected Database.ProblemCol ProblemColl;
+        protected Submission.AllSubmission submit;
 
         public List<Model.Problems> AllProblems
         {
@@ -24,12 +25,23 @@ namespace Problem
 
 
         // compile time polymorphism
-        public void edit_problem(string title) { }
-        public void edit_problem(string title, string content) { }
-        public void edit_problem(string title, string content, int difficulty,
-        int timeLimit, int memoryLimit)
-        { }
-        public void edit_testcases(string inputFile, string outputFile) { }
-        public void edit_statistics(int trial, int accepted) { }
+        public void edit_problem(Model.Problems problem)
+        {
+            ProblemColl.UpdateOne(problem);
+        }
+        public void edit_statistics(string problemID) 
+        {         
+            double newAC = submit.ProblemACRate(problemID);
+
+            List<Model.Problems> UpdataProblem = SelectProblem(problemID);
+            UpdataProblem[0].acRate = newAC;
+            edit_problem(UpdataProblem[0]);
+
+        }
+
+        public void edit_testcases(string inputFile, string outputFile)
+        {
+
+        }
     }
 }

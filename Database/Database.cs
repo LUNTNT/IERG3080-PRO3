@@ -11,7 +11,7 @@ namespace Database
 
     public class MongoDB
     {
-        private static string connection = "mongodb+srv://admin:<admin>@cluster0.ag5gb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+        private static string connection = "mongodb+srv://admin:admin@cluster0.ag5gb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
         protected static MongoClient client = new MongoClient(connection);
         protected static IMongoDatabase db = client.GetDatabase("3080Proj");
