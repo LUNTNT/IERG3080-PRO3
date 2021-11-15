@@ -338,3 +338,14 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+*.dll
+MigrationBackup/3509441d/IERG3080 PRO3/IERG3080 PRO3.csproj
+MigrationBackup/3509441d/IERG3080 PRO3/NuGetUpgradeLog.html
+MigrationBackup/3509441d/IERG3080 PRO3/packages.config
+packages.config
+mongocrypt.dll
+*.dll
+IERG3080 PRO3.csproj
+libmongocrypt.dylib
+libmongocrypt.so
+packages.config
