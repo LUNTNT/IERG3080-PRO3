@@ -23,6 +23,9 @@ namespace ProblemPage
         public ProblemPage(Model.Problems selectedProblem)
         {
             InitializeComponent();
+            ProblemID.Text = selectedProblem.ID;
+            ProblemName.Text = selectedProblem.title;
+            PRO
         }
 
         private void Language_SelectionChanged(object sender, SelectionChangedEventArgs e)
