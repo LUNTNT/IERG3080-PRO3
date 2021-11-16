@@ -26,7 +26,7 @@ namespace IERG3080_PRO3
         public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
 
 
-        public MainWindow()
+        public MainWindow(string userID)
         {
             InitializeComponent();
 
@@ -66,34 +66,13 @@ namespace IERG3080_PRO3
     {
         //After done front end and put into it
         protected ProblemSystem.ProgramProblem problems = new ProblemSystem.ProgramProblem();
-        protected User.User users = new User.User();
+
 
 
 
         public JudgeSystem() { } // constructor
 
-        public void login(string userID, string password)
-        {
-            bool result = users.VerifyLogin(userID, password);
 
-            if (result == true)
-            {
-                bool isadmin = users.Isadmin(userID);
-
-                if (isadmin == true)
-                {
-                    load_admin_page();
-                }
-                else
-                {
-                    load_student_page();
-                }
-            }
-            else
-            {
-                string message = "Wrong UerID or Password";
-            }
-        }
         public void logout()
         {
             load_login_page();
@@ -112,8 +91,7 @@ namespace IERG3080_PRO3
         public void browse_records() { }
         public void browse_statistics() { }
 
-        public void load_student_page() { }
-        public void load_admin_page() { }
+
         public void load_login_page() { }
     }
 }

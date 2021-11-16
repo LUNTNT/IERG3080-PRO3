@@ -19,7 +19,7 @@
             <TextBox Height="24" HorizontalAlignment="Left" Margin="198,23,0,0" Name="textBoxUserName" VerticalAlignment="Top" Width="222" RenderTransformOrigin="0.626,0.375" />
             <PasswordBox Height="24" HorizontalAlignment="Left" Margin="198,87,0,0" Name="textBoxPassword" VerticalAlignment="Top" Width="222" />
 
-            <Button Margin="29,148,37,24" Background="DodgerBlue" RenderTransformOrigin="0.5,0.5">
+            <Button Margin="29,148,37,24" Background="DodgerBlue" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
                 <TextBlock Text="Login" Foreground="White"/>
             </Button>
         </Grid>

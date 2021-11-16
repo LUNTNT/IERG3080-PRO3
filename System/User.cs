@@ -8,7 +8,7 @@ namespace User
 {
     public class User
     {
-        protected Database.UsersCol UsersCol;
+        protected Database.UsersCol UsersCol = new Database.UsersCol();
 
         protected string ID, name, password;
         public User() { } // constructors
@@ -17,10 +17,10 @@ namespace User
         public bool VerifyLogin(string userID, string password)
         {
             List<Model.Users> finduser = UsersCol.GetOneByID(userID);
-            if (finduser[0] == null)
+            if (finduser.Count == 0)
             {
                 return false;
-            }
+            } 
 
             if (finduser[0].password != password)
             {
