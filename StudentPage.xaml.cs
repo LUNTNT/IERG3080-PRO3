@@ -18,9 +18,9 @@ namespace IERG3080_PRO3
     /// <summary>
     /// MainWindow_AfterLogin_.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow_AfterLogin_ : Page
+    public partial class StudentPage : Page
     {
-        public MainWindow_AfterLogin_()
+        public StudentPage()
         {
             InitializeComponent();
         }

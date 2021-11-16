@@ -61,7 +61,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow%28AfterLogin%29.xaml">
+    <Page Include="StudentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -77,8 +77,8 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Judger\Judge.cs" />
-    <Compile Include="MainWindow%28AfterLogin%29.xaml.cs">
-      <DependentUpon>MainWindow%28AfterLogin%29.xaml</DependentUpon>
+    <Compile Include="StudentPage.xaml.cs">
+      <DependentUpon>StudentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProblemPage.xaml.cs">
       <DependentUpon>ProblemPage.xaml</DependentUpon>
