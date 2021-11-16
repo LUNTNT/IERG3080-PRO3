@@ -13,7 +13,7 @@
             <ColumnDefinition Width="147*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Local Judging System" FontSize="20" FontFamily="Helvetica" Margin="0,10,0,-0.2" Grid.ColumnSpan="2"/>
-        <TabControl HorizontalAlignment="Left"  Width="1058" SelectionChanged="TabControl_SelectionChanged" Background="LightGray" Margin="0,10,0,-0.2" Grid.ColumnSpan="2"  >
+        <TabControl HorizontalAlignment="Left"  Width="1058"  Background="LightGray" Margin="0,10,0,-0.2" Grid.ColumnSpan="2"  >
             <TabItem Header="Home" FontSize="15" Margin="258,0,-306,0" FontFamily="Helvetica" Height="38" VerticalAlignment="Bottom" RenderTransformOrigin="0.642,0.421"  >
 
             </TabItem>
@@ -21,7 +21,7 @@
             <TabItem Header="Problems" FontSize="15" Margin="305,0,-331,0" FontFamily="Helvetica">
                 <Grid Margin="30,32,181,62" Background="White">
                     <TextBlock HorizontalAlignment="Left" Margin="19,19,0,0" TextWrapping="Wrap" FontSize="20" Text="Problem List" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="134" Foreground="DimGray"/>
-                    <DataGrid x:Name="dataGrid" ItemsSource="{Binding AllList}" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dataGrid_SelectionChanged_1" Margin="0,56,0,0.6" Background="White" HorizontalAlignment="Left" Width="841">
+                    <DataGrid x:Name="dataGrid" ItemsSource="{Binding AllList}" AutoGenerateColumns="False" IsReadOnly="True"  Margin="0,56,0,0.6" Background="White" HorizontalAlignment="Left" Width="841">
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="100" Binding="{Binding ID}">
                                 <DataGridTextColumn.Header >
@@ -60,6 +60,13 @@
                             </DataGridTextColumn>
 
                         </DataGrid.Columns>
+
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        
                     </DataGrid>
 
                 </Grid>
