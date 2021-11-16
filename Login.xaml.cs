@@ -13,7 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+<<<<<<< HEAD:Login.xaml.cs
 namespace IERG3080_PRO3
+=======
+namespace IERG3080_PRO3_Login
+>>>>>>> 2b842a9f5e6886bc49c443f8bc49070e9b109c06:Interface/Login.xaml.cs
 {
     /// <summary>
     /// Login.xaml 的互動邏輯
