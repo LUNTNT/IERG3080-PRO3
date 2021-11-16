@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IERG3080_PRO3
+namespace ProblemPage
 {
     /// <summary>
     /// Problem.xaml 的互動邏輯

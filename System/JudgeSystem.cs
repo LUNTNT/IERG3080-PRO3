@@ -15,7 +15,7 @@ namespace JudgeSystem
     public class JudgeSystem
     {
         //After done front end and put into it
-        Problem.ProgramProblem problems;
+        ProblemSystem.ProgramProblem problems;
         User.User users;
         
 

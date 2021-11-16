@@ -65,7 +65,7 @@ namespace IERG3080_PRO3
     public class JudgeSystem
     {
         //After done front end and put into it
-        protected Problem.ProgramProblem problems = new Problem.ProgramProblem();
+        protected ProblemSystem.ProgramProblem problems = new ProblemSystem.ProgramProblem();
         protected User.User users = new User.User();
 
 

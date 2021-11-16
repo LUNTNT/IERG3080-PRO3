@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Problem
+namespace ProblemSystem
 {
     // Each problems has its ID, title, text descriptions, test cases and stat
     // Admin or author can edit the problems, including test cases
