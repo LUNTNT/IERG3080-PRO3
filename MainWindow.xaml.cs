@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IERG3080_PRO3_Login;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,15 +16,14 @@ using System.Windows.Shapes;
 
 namespace IERG3080_PRO3
 {
-    /// <summary>
-    /// MainWindow.xaml 的互動邏輯
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
         }
+
         private void OpenLoginPage(object sender, RoutedEventArgs s)
         {
             Login objLogin = new Login();

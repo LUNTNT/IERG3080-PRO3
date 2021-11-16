@@ -14,7 +14,7 @@ namespace JudgeSystem
     // Users can log out after use.
     public class JudgeSystem
     {
-
+        //After done front end and put into it
         Problem.ProgramProblem problems;
         User.User users;
         
@@ -25,23 +25,49 @@ namespace JudgeSystem
         private void initialization()
         {
         }
+
         public void login(string userID, string password)
         {
             bool result = users.VerifyLogin(userID, password);
             
             if (result == true)
             {
+                bool isadmin = users.Isadmin(userID);
 
+                if (isadmin == true)
+                {
+                    load_admin_page();
+                }
+                else
+                {
+                    load_student_page();
+                }
             }
             else
             {
-
+                string message = "Wrong UerID or Password";
             }
         }
-        public void logout() { }
-        public void browse_problem_list() { }
-        public void browse_problem() { }
+        public void logout() 
+        {
+            load_login_page();
+
+        }
+
+        public List<Model.Problems> browse_problem_list() 
+        {
+            return problems.AllProblems;
+        }
+        public List<Model.Problems> browse_problem(string problemID) 
+        {
+            return problems.SelectProblem(problemID);
+        }
+
+        public void browse_records() { }
         public void browse_statistics() { }
+
+        public void load_student_page() { }
         public void load_admin_page() { }
+        public void load_login_page() { }
     }
 }

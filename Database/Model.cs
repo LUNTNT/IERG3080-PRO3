@@ -23,7 +23,7 @@ namespace Model
         public string author;
 
         public int trial;
-        public int difficulty;
+        public string difficulty;
         public int timeLimit;
         public int memoryLimit;
 
@@ -39,7 +39,7 @@ namespace Model
         public string userID;
         public string problemID;
 
-        public string program;
-        public int result;
+        public string programpath;
+        public string result;
     }
 }

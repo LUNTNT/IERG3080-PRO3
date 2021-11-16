@@ -4,29 +4,30 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:IERG3080_PRO3"
-    mc:Ignorable="d" Width="2068.083" Height="1074"
+    mc:Ignorable="d" Width="1504.083" Height="858"
     Title="Local Judging System"  >
+
     <Grid >
         <Label Content="Local Judging System" FontSize="30" FontFamily="Helvetica" Margin="20,15,20,20"/>
-        <TabControl HorizontalAlignment="Left"  Width="2065" SelectionChanged="TabControl_SelectionChanged" Background="LightGray" Margin="-5,0,0,0"  >
+        <TabControl HorizontalAlignment="Left"  Width="1501" SelectionChanged="TabControl_SelectionChanged" Background="LightGray" Margin="-5,0,0,0"  >
             <TabItem Header="Home" FontSize="20" Margin="376,-1,-433,0" FontFamily="Helvetica" Height="63" VerticalAlignment="Bottom"  >
 
 
             </TabItem>
 
             <TabItem Header="Problems" FontSize="20" Margin="432,0,-491,0" FontFamily="Helvetica">
-                <Grid Margin="30,32,496,62" Background="White">
+                <Grid Margin="30,32,298,62" Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition Width="1386"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock HorizontalAlignment="Left" Margin="40,24,0,0" TextWrapping="Wrap" FontSize="30" Text="Problem List" FontFamily="Helvetica" VerticalAlignment="Top" Height="37" Width="219" Grid.Column="1"/>
-                    <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged_1" Margin="0,70,-145,0" Background="White" Grid.Column="1">
+                    <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged_1" Margin="0,70,219,0" Background="White" Grid.Column="1">
                         <DataGrid.Columns >
-                            <DataGridTextColumn Header="#" Width="150"  />
-                            <DataGridTextColumn Header="Title" Width="300"/>
-                            <DataGridTextColumn Header="Level" Width="250" />
-                            <DataGridTextColumn Header="Total" Width="250" />
+                            <DataGridTextColumn Header="#" Width="150" />
+                            <DataGridTextColumn Header="Title" Width="250"/>
+                            <DataGridTextColumn Header="Level" Width="150" />
+                            <DataGridTextColumn Header="Total" Width="150" />
                             <DataGridTextColumn Header="AC Rate" Width="250" />
                             <DataGridTextColumn Header="Tags" Width="250" />
 
@@ -51,7 +52,7 @@
             </TabItem>
 
         </TabControl>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="1750,16,0,0" VerticalAlignment="Top" Width="92" Height="37" FontSize="20" Background="White" FontFamily="Helvetica" Click="OpenLoginPage"/>
-        <Button Content="Register" HorizontalAlignment="Left" Margin="1912,15,0,0" VerticalAlignment="Top" Width="98" Height="37" FontSize="20" Background="White" FontFamily="Helvetica"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="1270,16,0,0" VerticalAlignment="Top" Width="92" Height="37" FontSize="20" Background="White" FontFamily="Helvetica" Click="OpenLoginPage" RenderTransformOrigin="-4.196,1.108"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="1378,16,0,0" VerticalAlignment="Top" Width="98" Height="37" FontSize="20" Background="White" FontFamily="Helvetica"/>
     </Grid>
 </Window>
