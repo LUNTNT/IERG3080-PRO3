@@ -80,8 +80,8 @@
     <Compile Include="MainWindow%28AfterLogin%29.xaml.cs">
       <DependentUpon>MainWindow%28AfterLogin%29.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Problem.xaml.cs">
-      <DependentUpon>Problem.xaml</DependentUpon>
+    <Compile Include="ProblemPage.xaml.cs">
+      <DependentUpon>ProblemPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="System\Submission.cs" />
     <Compile Include="System\Problem.cs" />
@@ -93,7 +93,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Problem.xaml">
+    <Page Include="ProblemPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

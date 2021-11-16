@@ -46,7 +46,6 @@ namespace IERG3080_PRO3
             Login objLogin = new Login();
             objLogin.Show();
 
-
         }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

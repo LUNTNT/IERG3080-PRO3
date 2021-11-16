@@ -18,9 +18,9 @@ namespace IERG3080_PRO3
     /// <summary>
     /// Problem.xaml 的互動邏輯
     /// </summary>
-    public partial class Problem : Page
+    public partial class ProblemPage : Page
     {
-        public Problem()
+        public ProblemPage()
         {
             InitializeComponent();
         }
@@ -44,5 +44,6 @@ namespace IERG3080_PRO3
         {
 
         }
+
     }
 }
