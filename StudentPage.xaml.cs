@@ -15,14 +15,20 @@ using System.Windows.Shapes;
 
 namespace IERG3080_PRO3
 {
-    /// <summary>
-    /// MainWindow_AfterLogin_.xaml 的互動邏輯
-    /// </summary>
-    public partial class StudentPage : Page
+
+    public partial class StudentPage : Window
     {
-        public StudentPage()
+        public StudentPage(Model.Users UserInfo)
         {
             InitializeComponent();
+            Username.Text = UserInfo.name;
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            IERG3080_PRO3_Login.Login backlogin = new IERG3080_PRO3_Login.Login();
+            backlogin.Show();
+            this.Close();
         }
     }
 }

@@ -61,14 +61,14 @@ namespace IERG3080_PRO3_Login
 
         public void load_student_page(Model.Users UserInfo) 
         {
-            IERG3080_PRO3.MainWindow main = new IERG3080_PRO3.MainWindow(UserInfo);
-            main.Show();
+            IERG3080_PRO3.StudentPage main1 = new IERG3080_PRO3.StudentPage(UserInfo);
+            main1.Show();
             this.Close();
         }
         public void load_admin_page(Model.Users UserInfo) 
         {
-            IERG3080_PRO3.MainWindow main = new IERG3080_PRO3.MainWindow(UserInfo);
-            main.Show();
+            IERG3080_PRO3.MainWindow main2 = new IERG3080_PRO3.MainWindow(UserInfo);
+            main2.Show();
             this.Close();
         }
     }

@@ -32,7 +32,7 @@ namespace User
         public bool Isadmin(string userID)
         {
             List<Model.Users> finduser = UsersCol.GetOneByID(userID);
-            if (finduser[0].userType != "admin")
+            if (finduser[0].userType != "Admin")
             {
                 return false;
             }
