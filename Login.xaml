@@ -5,25 +5,23 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IERG3080_PRO3_Login"
       mc:Ignorable="d"
-      Title="Login" Height="211.167" Width="341.833"
+      Title="Login" Height="311.167" Width="484.833"
          
  >
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="10,14,0,0" TextWrapping="Wrap" Text="Welcome to Local Judging System" VerticalAlignment="Top" Height="19" Width="322" FontSize="15" FontWeight="DemiBold" FontFamily="Helvetica" Foreground="DimGray"/>
-        <Rectangle  HorizontalAlignment="Stretch"  VerticalAlignment="Center" Fill="DarkGray" Height="1" Margin="0,45,0,165"/>
-        <Grid Margin="10,51,10,10">
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,13,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="110" />
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,54,0,0" Name="textBlockLastName" Text="Password:" VerticalAlignment="Top" Width="110" />
+        <TextBlock HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" Text="Welcome to Local Judging System" VerticalAlignment="Top" Height="19" Width="322" FontSize="15" FontWeight="DemiBold" FontFamily="Helvetica" Foreground="DimGray"/>
+        <Rectangle  HorizontalAlignment="Stretch"  VerticalAlignment="Center" Fill="DarkGray" Height="1" Margin="10,53,10,226"/>
+        
+        <Grid Margin="10,59,10,10">
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="29,24,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="73" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="29,87,0,0" Name="textBlockLastName" Text="Password:" VerticalAlignment="Top" Width="73" />
 
-            <TextBox Height="24" HorizontalAlignment="Left" Margin="100,10,0,0" Name="textBoxUserName" VerticalAlignment="Top" Width="212" />
-            <PasswordBox Height="24" HorizontalAlignment="Left" Margin="100,51,0,0" Name="textBoxPassword" VerticalAlignment="Top" Width="212" />
+            <TextBox Height="24" HorizontalAlignment="Left" Margin="198,23,0,0" Name="textBoxUserName" VerticalAlignment="Top" Width="222" RenderTransformOrigin="0.626,0.375" />
+            <PasswordBox Height="24" HorizontalAlignment="Left" Margin="198,87,0,0" Name="textBoxPassword" VerticalAlignment="Top" Width="222" />
 
-            <Button Margin="10,93,10,34" Background="DodgerBlue">
+            <Button Margin="29,148,37,24" Background="DodgerBlue" RenderTransformOrigin="0.5,0.5">
                 <TextBlock Text="Login" Foreground="White"/>
-
             </Button>
-
-
         </Grid>
 
     </Grid>
