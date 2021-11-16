@@ -76,7 +76,10 @@
 
 
         </TabControl>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="136.2,18,0,0" VerticalAlignment="Top" Width="50" Height="25" FontSize="10" Background="White" FontFamily="Helvetica" Click="OpenLoginPage" RenderTransformOrigin="-4.196,1.108" Grid.Column="1"/>
-        <Button Content="Register" HorizontalAlignment="Left" Margin="218.2,18,0,0" VerticalAlignment="Top" Width="50" Height="25" FontSize="10" Background="White" FontFamily="Helvetica" Grid.Column="1"/>
+
+        <TextBlock Name="Username" HorizontalAlignment="Left" Margin="123.6,19,0,0" TextWrapping="Wrap" Text="lok" VerticalAlignment="Top" Width="61" Height="19" RenderTransformOrigin="-0.164,0.611" FontSize="15" Foreground="Black" Grid.Column="1"/>
+        <Button Name="Logout" Content="Logout" HorizontalAlignment="Left" Margin="189.6,20,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="Logout_Click"/>
+
+
     </Grid>
 </Window>

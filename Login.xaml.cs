@@ -40,15 +40,17 @@ namespace IERG3080_PRO3_Login
 
             if (result == true)
             {
+                Model.Users UserInfo = users.GetUserInfo(userID);
+
                 bool isadmin = users.Isadmin(userID);
 
                 if (isadmin == true)
                 {
-                    load_admin_page(userID);
+                    load_admin_page(UserInfo);
                 }
                 else
                 {
-                    load_student_page(userID);
+                    load_student_page(UserInfo);
                 }
             }
             else
@@ -57,15 +59,15 @@ namespace IERG3080_PRO3_Login
             }
         }
 
-        public void load_student_page(string userid) 
+        public void load_student_page(Model.Users UserInfo) 
         {
-            IERG3080_PRO3.MainWindow main = new IERG3080_PRO3.MainWindow(userid);
+            IERG3080_PRO3.MainWindow main = new IERG3080_PRO3.MainWindow(UserInfo);
             main.Show();
             this.Close();
         }
-        public void load_admin_page(string userid) 
+        public void load_admin_page(Model.Users UserInfo) 
         {
-            IERG3080_PRO3.MainWindow main = new IERG3080_PRO3.MainWindow(userid);
+            IERG3080_PRO3.MainWindow main = new IERG3080_PRO3.MainWindow(UserInfo);
             main.Show();
             this.Close();
         }

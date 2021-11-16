@@ -40,6 +40,13 @@ namespace User
             return true;
         }
 
+        public Model.Users GetUserInfo(string userID)
+        {
+            List<Model.Users> temp1 = UsersCol.GetOneByID(userID);
+
+            return temp1[0];
+        }
+
         // runtime polymorphism
         public virtual void edit_profile(string name, string password) { }
         public void submit_problem(string problemID) { }

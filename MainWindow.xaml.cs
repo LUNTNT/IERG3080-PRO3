@@ -23,12 +23,15 @@ namespace IERG3080_PRO3
     public partial class MainWindow : Window
     {
         protected JudgeSystem JudgeSystem = new JudgeSystem();
+        
         public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
 
 
-        public MainWindow(string userID)
+        public MainWindow(Model.Users UserInfo)
         {
             InitializeComponent();
+
+            Username.Text = UserInfo.name;
 
             List<Model.Problems> list_problem = JudgeSystem.browse_problem_list();
             foreach (Model.Problems temp1 in list_problem)
@@ -40,13 +43,6 @@ namespace IERG3080_PRO3
 
         }
 
-        private void OpenLoginPage(object sender, RoutedEventArgs s)
-        {
-
-            Login objLogin = new Login();
-            objLogin.Show();
-
-        }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -59,6 +55,13 @@ namespace IERG3080_PRO3
 
         private void dataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            IERG3080_PRO3_Login.Login backlogin = new Login();
+            backlogin.Show();
+            this.Close();
         }
     }
 
