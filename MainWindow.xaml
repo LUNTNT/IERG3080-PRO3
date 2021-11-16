@@ -8,8 +8,12 @@
     Title="Local Judging System"  >
 
     <Grid>
-        <Label Content="Local Judging System" FontSize="20" FontFamily="Helvetica" Margin="0,10,0,0"/>
-        <TabControl HorizontalAlignment="Left"  Width="1058" SelectionChanged="TabControl_SelectionChanged" Background="LightGray" Margin="0,10,0,0"  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="383*"/>
+            <ColumnDefinition Width="147*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Local Judging System" FontSize="20" FontFamily="Helvetica" Margin="0,10,0,-0.2" Grid.ColumnSpan="2"/>
+        <TabControl HorizontalAlignment="Left"  Width="1058" SelectionChanged="TabControl_SelectionChanged" Background="LightGray" Margin="0,10,0,-0.2" Grid.ColumnSpan="2"  >
             <TabItem Header="Home" FontSize="15" Margin="258,0,-306,0" FontFamily="Helvetica" Height="38" VerticalAlignment="Bottom" RenderTransformOrigin="0.642,0.421"  >
 
             </TabItem>
@@ -17,46 +21,48 @@
             <TabItem Header="Problems" FontSize="15" Margin="305,0,-331,0" FontFamily="Helvetica">
                 <Grid Margin="30,32,181,62" Background="White">
                     <TextBlock HorizontalAlignment="Left" Margin="19,19,0,0" TextWrapping="Wrap" FontSize="20" Text="Problem List" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="134" Foreground="DimGray"/>
-                    <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged_1" Margin="0,56,0,0" Background="White" HorizontalAlignment="Left" Width="841">
+                    <DataGrid x:Name="dataGrid" ItemsSource="{Binding AllList}" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dataGrid_SelectionChanged_1" Margin="0,56,0,0.6" Background="White" HorizontalAlignment="Left" Width="841">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Width="100">
-                                <DataGridTextColumn.Header>
+                            <DataGridTextColumn Width="100" Binding="{Binding ID}">
+                                <DataGridTextColumn.Header >
                                     <TextBlock FontSize="15" Text="#" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center"  FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="200">
-                                <DataGridTextColumn.Header>
+                            <DataGridTextColumn Width="200" Binding="{Binding title}">
+                                <DataGridTextColumn.Header >
                                     <TextBlock FontSize="15" Text="Title" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" />
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="150">
+                            <DataGridTextColumn Width="150" Binding="{Binding difficulty}">
                                 <DataGridTextColumn.Header >
                                     <TextBlock FontSize="15" Text="Level" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="150">
-                                <DataGridTextColumn.Header>
+                            <DataGridTextColumn Width="150" Binding="{Binding author}">
+                                <DataGridTextColumn.Header  >
                                     <TextBlock FontSize="15" Text="Total" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="150">
+                            <DataGridTextColumn Width="150" Binding="{Binding acRate}">
                                 <DataGridTextColumn.Header >
                                     <TextBlock FontSize="15" Text="AC Rate" Width="77" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="150">
-                                <DataGridTextColumn.Header >
+                            <DataGridTextColumn Width="150" Binding="{Binding timeLimit}">
+                                <DataGridTextColumn.Header  >
                                     <TextBlock FontSize="15" Text="Tags" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
                         </DataGrid.Columns>
                     </DataGrid>
+                    <Label Name="abc" Content="Label" HorizontalAlignment="Left" Margin="304,19,0,0" VerticalAlignment="Top"/>
+
                 </Grid>
 
             </TabItem>
@@ -68,8 +74,9 @@
 
             </TabItem>
 
+
         </TabControl>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="902,18,0,0" VerticalAlignment="Top" Width="50" Height="25" FontSize="10" Background="White" FontFamily="Helvetica" Click="OpenLoginPage" RenderTransformOrigin="-4.196,1.108"/>
-        <Button Content="Register" HorizontalAlignment="Left" Margin="984,18,0,0" VerticalAlignment="Top" Width="50" Height="25" FontSize="10" Background="White" FontFamily="Helvetica"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="136.2,18,0,0" VerticalAlignment="Top" Width="50" Height="25" FontSize="10" Background="White" FontFamily="Helvetica" Click="OpenLoginPage" RenderTransformOrigin="-4.196,1.108" Grid.Column="1"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="218.2,18,0,0" VerticalAlignment="Top" Width="50" Height="25" FontSize="10" Background="White" FontFamily="Helvetica" Grid.Column="1"/>
     </Grid>
 </Window>

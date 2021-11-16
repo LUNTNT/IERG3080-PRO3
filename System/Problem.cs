@@ -11,8 +11,10 @@ namespace Problem
     // Stat of the problem is updated once user attempts the problem
     public class ProgramProblem
     {
-        protected Database.ProblemCol ProblemColl;
-        protected Submission.AllSubmission submit;
+        protected Database.ProblemCol ProblemColl = new Database.ProblemCol();
+        protected Submission.AllSubmission submit = new Submission.AllSubmission();
+
+        public ProgramProblem() { }
 
         public List<Model.Problems> AllProblems
         {

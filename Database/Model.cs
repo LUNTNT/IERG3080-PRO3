@@ -8,6 +8,7 @@ namespace Model
 {
     public class Users
     {
+        public object _id;
         public string userID;
         public string password;
         public string userType;
@@ -17,24 +18,38 @@ namespace Model
 
     public class Problems
     {
+        public object _id { get; set; }
+        public string ID { get; set; }
+        public string title { get; set; }
+        public string content { get; set; }
+        public string author { get; set; }
+
+        public int trial { get; set; }
+        public string difficulty { get; set; }
+        public int timeLimit { get; set; }
+        public int memoryLimit { get; set; }
+
+        public double acRate { get; set; }
+        public string[] tags { get; set; }
+
+        public bool isLive { get; set; }
+    }
+
+    public class Problem_list
+    {
         public string ID;
         public string title;
-        public string content;
         public string author;
 
-        public int trial;
         public string difficulty;
         public int timeLimit;
-        public int memoryLimit;
 
         public double acRate;
-        public double tags;
-
-        public bool isLive;
     }
 
     public class Submissions
     {
+        public object _id;
         public string submissionID;
         public string userID;
         public string problemID;
