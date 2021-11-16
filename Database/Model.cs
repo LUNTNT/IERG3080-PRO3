@@ -35,18 +35,6 @@ namespace Model
         public bool isLive { get; set; }
     }
 
-    public class Problem_list
-    {
-        public string ID;
-        public string title;
-        public string author;
-
-        public string difficulty;
-        public int timeLimit;
-
-        public double acRate;
-    }
-
     public class Submissions
     {
         public object _id;

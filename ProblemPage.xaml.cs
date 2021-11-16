@@ -20,7 +20,7 @@ namespace ProblemPage
     /// </summary>
     public partial class ProblemPage : Page
     {
-        public ProblemPage()
+        public ProblemPage(Model.Problems selectedProblem)
         {
             InitializeComponent();
         }
