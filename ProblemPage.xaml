@@ -3,6 +3,9 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:dvc="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+      xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+      
       xmlns:local="clr-namespace:ProblemPage"
       mc:Ignorable="d"
       Title="Problem"
@@ -20,10 +23,10 @@
             <TextBlock Name="Description" HorizontalAlignment="Left" Margin="50,92,0,0" TextWrapping="Wrap" FontSize="13" Text="Calculate A+B" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="380" Foreground="DimGray"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="29,120,0,0" TextWrapping="Wrap" FontSize="15" Text="Input" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="96" Foreground="DodgerBlue"/>
-            <TextBlock Name="Input" HorizontalAlignment="Left" Margin="50,148,0,0" TextWrapping="Wrap" FontSize="13" Text="Two integer a, b" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="380" Foreground="DimGray"/>
+            <TextBlock Name="InputDescription" HorizontalAlignment="Left" Margin="50,148,0,0" TextWrapping="Wrap" FontSize="13" Text="Two integer a, b" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="380" Foreground="DimGray"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="29,176,0,0" TextWrapping="Wrap" FontSize="15" Text="Output" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="96" Foreground="DodgerBlue"/>
-            <TextBlock Name="Output"  HorizontalAlignment="Left" Margin="50,204,0,0" TextWrapping="Wrap" FontSize="13" Text="Output a+b" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="380" Foreground="DimGray"/>
+            <TextBlock Name="OutputDescription"  HorizontalAlignment="Left" Margin="50,204,0,0" TextWrapping="Wrap" FontSize="13" Text="Output a+b" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="380" Foreground="DimGray"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="29,242,0,0" TextWrapping="Wrap" FontSize="15" Text="Samput Input 1" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="131" Foreground="DodgerBlue"/>
             <TextBox Name="SampleInput" Height="24" HorizontalAlignment="Left" Margin="29,269,0,0"  VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.626,0.375"  />
@@ -42,29 +45,49 @@
                 <ComboBoxItem Content="Java"></ComboBoxItem>
             </ComboBox>
 
-            <Button Name="SubmitProblem" Margin="651,319,10,10" Background="LightGray" Content="Submit"> </Button>
+            <Button Name="SubmitProblem" Margin="651,319,10,10" Background="LightGray" Content="Submit"></Button>
         </Grid>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="842,56,0,0" VerticalAlignment="Top" Width="191" Background="White" />
 
         <Grid HorizontalAlignment="Left" Height="221" Margin="842,129,0,0" VerticalAlignment="Top" Width="191" Background="White">
             <TextBlock  HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" FontSize="13" Text="ID" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="35" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
-            <TextBlock Name="ID" HorizontalAlignment="Left" Margin="143,52,0,0" TextWrapping="Wrap" FontSize="13" Text="0000" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="48" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
+            <TextBlock Name="ID" HorizontalAlignment="Left" Margin="111,52,0,0" TextWrapping="Wrap" FontSize="13" Text="0000" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
 
             <TextBlock  HorizontalAlignment="Left" Margin="10,79,0,0" TextWrapping="Wrap" FontSize="13" Text="Time Limit" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="73" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
-            <TextBlock Name="TimeLimit" HorizontalAlignment="Left" Margin="124,80,0,0" TextWrapping="Wrap" FontSize="13" Text="1000MS" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="57" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
+            <TextBlock Name="TimeLimit" HorizontalAlignment="Left" Margin="111,80,0,0" TextWrapping="Wrap" FontSize="13" Text="1000MS" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
 
             <TextBlock  HorizontalAlignment="Left" Margin="10,107,0,0" TextWrapping="Wrap" FontSize="13" Text="Memory Limit" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="125" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
-            <TextBlock Name="MemoryLimit" HorizontalAlignment="Left" Margin="131,107,0,0" TextWrapping="Wrap" FontSize="13" Text="256MB" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="57" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
+            <TextBlock Name="MemoryLimit" HorizontalAlignment="Left" Margin="111,107,0,0" TextWrapping="Wrap" FontSize="13" Text="256MB" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
 
             <TextBlock  HorizontalAlignment="Left" Margin="10,134,0,0" TextWrapping="Wrap" FontSize="13" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="106" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"><Run Text="Cr"/><Run Text="ea"/><Run Text="ted By"/></TextBlock>
-            <TextBlock Name="CreatedBy" HorizontalAlignment="Left" Margin="151,134,0,0" TextWrapping="Wrap" FontSize="13" Text="abc" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="37" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
+            <TextBlock Name="CreatedBy" HorizontalAlignment="Left" Margin="111,134,0,0" TextWrapping="Wrap" FontSize="13" Text="abc" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
 
             <TextBlock  HorizontalAlignment="Left" Margin="10,161,0,0" TextWrapping="Wrap" FontSize="13" Text="Level" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="35" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
-            <TextBlock Name="Level" HorizontalAlignment="Left" Margin="143,161,0,0" TextWrapping="Wrap" FontSize="13" Text="Low" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="41" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
+            <TextBlock Name="Level" HorizontalAlignment="Left" Margin="111,161,0,0" TextWrapping="Wrap" FontSize="13" Text="Low" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
 
         </Grid>
 
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="267" Margin="842,371,0,0" VerticalAlignment="Top" Width="191" Background="White" RenderTransformOrigin="0.504,0.711" />
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="267" Margin="842,371,0,0" VerticalAlignment="Top" Width="191" Background="White" RenderTransformOrigin="0.504,0.711" >
+            <Grid>
+                <dvc:Chart  Name="pieChart" Title="AC Rate" Margin="10,10,10,-7" Height="262" BorderBrush="#00000000" DataContext="{Binding}" IsHitTestVisible="False" IsTabStop="True" ForceCursor="True" >
+                    <dvc:PieSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True" Margin="10" />
+
+                    <!-- Plot area-->
+                    <dvc:Chart.PlotAreaStyle>
+                        <Style TargetType="Grid">
+                            <Setter Property="Background" Value="White" />
+                        </Style>
+                    </dvc:Chart.PlotAreaStyle>
+
+                    <dvc:Chart.LegendStyle>
+                        <Style TargetType="datavis:Legend">
+                            <Setter Property="Width" Value="0" />
+                        </Style>
+                    </dvc:Chart.LegendStyle>
+                </dvc:Chart>
+            </Grid>
+
+        </Border>
 
     </Grid>
 
