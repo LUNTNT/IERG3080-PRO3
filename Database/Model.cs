@@ -48,4 +48,10 @@ namespace Model
         public string programpath;
         public string result;
     }
+
+    public class PiePoint
+    {
+        public string Name { get; set; }
+        public Int16 Share { get; set; }
+    }
 }

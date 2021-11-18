@@ -38,14 +38,21 @@
 
         <Grid Background="White" Margin="30,415,317,75">
             <TextBlock HorizontalAlignment="Left" Margin="33,21,0,0" TextWrapping="Wrap" FontSize="15" Text="Language:" FontFamily="Helvetica" VerticalAlignment="Top" Height="21" Width="82" Foreground="DimGray"/>
-            <ComboBox Margin="115,21,0,0" Name="LanguageComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="21" RenderTransformOrigin="0.943,0.933" Foreground="Black">
+            <ComboBox Margin="115,21,0,0" Name="LanguageComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="21" RenderTransformOrigin="0.943,0.933" Foreground="Black" SelectionChanged="LanguageComboBox_SelectionChanged">
                 <ComboBoxItem Content="C"></ComboBoxItem>
                 <ComboBoxItem Content="C++"></ComboBoxItem>
                 <ComboBoxItem Content="Python"></ComboBoxItem>
                 <ComboBoxItem Content="Java"></ComboBoxItem>
             </ComboBox>
 
-            <Button Name="SubmitProblem" Margin="651,319,10,10" Background="LightGray" Content="Submit"></Button>
+            <Button Name="SubmitProblem" Margin="651,319,10,10" Background="LightGray" Content="Submit" Click="SubmitProblem_Click"></Button>
+
+            <avalonEdit:TextEditor
+                xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+                Name="textEditor"
+                FontFamily="Consolas"
+                SyntaxHighlighting="C#"
+                FontSize="10pt" Margin="0,47,41,59.8" HorizontalAlignment="Right" Width="675"/>
         </Grid>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="842,56,0,0" VerticalAlignment="Top" Width="191" Background="White" />
 
