@@ -55,8 +55,8 @@ namespace ProblemPage
 
         private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //if (LanguageComboBox.SelectedItem != null)
-                //textEditor.SyntaxHighlighting. = LanguageComboBox.SelectedItem;
+            if (LanguageComboBox.SelectedItem != null)
+                textEditor.SyntaxHighlighting = 
         }
 
         private void SubmitProblem_Click(object sender, RoutedEventArgs e)
