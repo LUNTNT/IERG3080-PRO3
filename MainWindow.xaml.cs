@@ -37,14 +37,23 @@ namespace IERG3080_PRO3
             foreach (Model.Problems temp1 in list_problem)
                 AllList.Add(temp1);
 
+
             dataGrid.ItemsSource = AllList;
 
         }
 
-        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DataGridRow row = sender as DataGridRow;
-            // Some operations with this row
+
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void dataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
@@ -53,8 +62,6 @@ namespace IERG3080_PRO3
             backlogin.Show();
             this.Close();
         }
-
-
     }
 
     public class JudgeSystem
