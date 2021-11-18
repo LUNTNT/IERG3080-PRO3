@@ -21,10 +21,13 @@ namespace Model
         public object _id { get; set; }
         public string ID { get; set; }
         public string title { get; set; }
-        public string content { get; set; }
+        public string description { get; set; }
+        public string inputContent { get; set; }
+        public string outputContent { get; set; }
+        public string inputSample { get; set; }
+        public string outputSample { get; set; }
         public string author { get; set; }
 
-        public int trial { get; set; }
         public string difficulty { get; set; }
         public int timeLimit { get; set; }
         public int memoryLimit { get; set; }
@@ -33,18 +36,6 @@ namespace Model
         public string[] tags { get; set; }
 
         public bool isLive { get; set; }
-    }
-
-    public class Problem_list
-    {
-        public string ID;
-        public string title;
-        public string author;
-
-        public string difficulty;
-        public int timeLimit;
-
-        public double acRate;
     }
 
     public class Submissions
