@@ -18,9 +18,6 @@ using ICSharpCode.AvalonEdit;
 
 namespace ProblemPage
 {
-    /// <summary>
-    /// Problem.xaml 的互動邏輯
-    /// </summary>
     public partial class ProblemPage : Page
     {
 
@@ -48,15 +45,17 @@ namespace ProblemPage
             List<KeyValuePair<string, double>> valueList = new List<KeyValuePair<string, double>>();
             valueList.Add(new KeyValuePair<string, double>("AC Rate", selectedProblem.acRate));
             valueList.Add(new KeyValuePair<string, double>("WR Rate", 1 - selectedProblem.acRate));
-
             pieChart.DataContext = valueList;
+
         }
 
 
         private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-/*            if (LanguageComboBox.SelectedItem != null)
-                textEditor.SyntaxHighlighting = */
+
+           if (LanguageComboBox.SelectedItem != null)
+                if (LanguageComboBox.SelectedItem.ToString() == "C")
+                    textEditor.SyntaxHighlighting = ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition("C++");
         }
 
         private void SubmitProblem_Click(object sender, RoutedEventArgs e)

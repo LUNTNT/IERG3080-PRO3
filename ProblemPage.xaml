@@ -51,7 +51,7 @@
                 xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
                 Name="textEditor"
                 FontFamily="Consolas"
-                SyntaxHighlighting="C#"
+                SyntaxHighlighting="C++"
                 ShowLineNumbers="True"
                 FontSize="10pt" Margin="0,47,41,59.8" HorizontalAlignment="Right" Width="675"/>
         </Grid>
