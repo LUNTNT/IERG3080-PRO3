@@ -99,7 +99,6 @@
     <Compile Include="ProblemPage.xaml.cs">
       <DependentUpon>ProblemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SyntaxHighlight\syntax.cs" />
     <Compile Include="System\Submission.cs" />
     <Compile Include="System\Problem.cs" />
     <Compile Include="System\JudgeSystem.cs" />
