@@ -41,20 +41,7 @@ namespace IERG3080_PRO3
 
         }
 
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void dataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-        }
-
+       
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             IERG3080_PRO3_Login.Login backlogin = new Login();
@@ -68,7 +55,8 @@ namespace IERG3080_PRO3
             DataGridRow row = sender as DataGridRow;
             // Some operations with this row
             Model.Problems selectedProblem = (Model.Problems)row.Item;
-            this.Content = new ProblemPage.ProblemPage(selectedProblem);
+             // this.Content = new ProblemPage.ProblemPage(selectedProblem);
+            Main.Content = new ProblemPage.ProblemPage(selectedProblem);
         }
     }
 

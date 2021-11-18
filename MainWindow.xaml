@@ -63,18 +63,19 @@
 
                         <DataGrid.Resources>
                             <Style TargetType="DataGridRow">
-                                <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                                <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick" />
                             </Style>
                         </DataGrid.Resources>
-                        
+
                     </DataGrid>
+                    <Frame x:Name="Main" Margin="-32,-34,-183.667,-65" />
 
                 </Grid>
 
             </TabItem>
 
             <TabItem Header="Record" FontSize="15" Margin="329,0,-329,0" FontFamily="Helvetica" Width="100">
-                            
+
             </TabItem>
             <TabItem Header="Statistics" FontSize="15" Margin="328,0,-328,0" FontFamily="Helvetica" Width="100">
 
@@ -85,7 +86,6 @@
 
         <TextBlock Name="Username" HorizontalAlignment="Left" Margin="53,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Height="19" RenderTransformOrigin="-0.164,0.611" FontSize="15" Foreground="Black" Grid.Column="1"/>
         <Button Name="Logout" Content="Logout" HorizontalAlignment="Left" Margin="189.6,20,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="Logout_Click"/>
-
 
     </Grid>
 </Window>
