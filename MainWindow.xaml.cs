@@ -19,7 +19,6 @@ using System.ComponentModel;
 
 namespace IERG3080_PRO3
 {
-
     public partial class MainWindow : Window
     {
         protected JudgeSystem JudgeSystem = new JudgeSystem();
