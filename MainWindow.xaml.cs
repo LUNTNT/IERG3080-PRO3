@@ -62,7 +62,18 @@ namespace IERG3080_PRO3
             backlogin.Show();
             this.Close();
         }
+
+        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            DataGridRow row = sender as DataGridRow;
+            // Some operations with this row
+            Model.Problems selectedProblem = (Model.Problems)row.Item;
+            this.Content = new ProblemPage.ProblemPage(selectedProblem);
+        }
     }
+
+
 
     public class JudgeSystem
     {
