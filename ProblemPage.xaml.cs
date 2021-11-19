@@ -22,6 +22,9 @@ namespace ProblemPage
     {
 
         public ObservableCollection<Model.PiePoint> PieCollection;
+        public SubmissionFiles.SubmissionFiles submissionFiles = new SubmissionFiles.SubmissionFiles();
+
+
 
         public ProblemPage(Model.Problems selectedProblem)
         {
@@ -86,7 +89,26 @@ namespace ProblemPage
 
         private void SubmitProblem_Click(object sender, RoutedEventArgs e)
         {
+            string submissionID = submissionFiles.generateID();
+            saveFile(submissionID, LanguageComboBox.SelectedItem.ToString());
 
+        }
+        private void saveFile (string submissionID, string fileType)
+        {
+            string savePath;
+
+            savePath = "./SubmissionFiles/" + submissionID + "";
+
+            if (fileType == "C")
+                savePath = "./SubmissionFiles/" + submissionID + ".c";
+            else if (fileType == "C++")
+                savePath = "./SubmissionFiles/" + submissionID + ".cpp";
+            else if (fileType == "Java")
+                savePath = "./SubmissionFiles/" + submissionID + ".java";
+            else if (fileType == "Python")
+                savePath = "./SubmissionFiles/" + submissionID + ".py";
+
+            textEditor.Save(savePath);
         }
     }
 }
