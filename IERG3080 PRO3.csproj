@@ -105,7 +105,6 @@
     <Compile Include="SubmissionFiles\submissions.cs" />
     <Compile Include="System\Submission.cs" />
     <Compile Include="System\Problem.cs" />
-    <Compile Include="System\JudgeSystem.cs" />
     <Compile Include="System\User.cs" />
     <Compile Include="Database\Model.cs" />
     <Compile Include="Database\Database.cs" />

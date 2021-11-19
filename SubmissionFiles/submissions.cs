@@ -16,5 +16,15 @@ namespace SubmissionFiles
             return Guid.NewGuid().ToString("N");
         }
 
+        public string GetJavaFileName(string lineText)
+        {
+            string[] temp = lineText.Split(' ', '{', '(');
+            for(int i = 0; i < (temp.Length - 2); i++)
+            {
+                if (temp[i] == "public" && temp[i + 1] == "class")
+                    return temp[i + 2];
+            }
+            return "";
+        }
     }
 }

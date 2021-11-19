@@ -20,11 +20,11 @@ namespace ProblemPage
 {
     public partial class ProblemPage : Page
     {
+        Judger.Judge Judge = new Judger.Judge();
+        Submission.AllSubmission submission = new Submission.AllSubmission();
 
         public ObservableCollection<Model.PiePoint> PieCollection;
         public SubmissionFiles.SubmissionFiles submissionFiles = new SubmissionFiles.SubmissionFiles();
-
-
 
         public ProblemPage(Model.Problems selectedProblem)
         {
@@ -95,20 +95,46 @@ namespace ProblemPage
         }
         private void saveFile (string submissionID, string fileType)
         {
-            string savePath;
-
-            savePath = "./SubmissionFiles/" + submissionID + "";
+            string savePath = Judge.Create_Dire(submissionID);
 
             if (fileType == "C")
-                savePath = "./SubmissionFiles/" + submissionID + ".c";
+                savePath += submissionID + ".c";
             else if (fileType == "C++")
-                savePath = "./SubmissionFiles/" + submissionID + ".cpp";
+                savePath += submissionID + ".cpp";
             else if (fileType == "Java")
-                savePath = "./SubmissionFiles/" + submissionID + ".java";
+            {
+                string textline = findText();
+
+                if (textline == "") 
+                {
+                    MessageBox.Show("Public Class Not Found!");
+                    return;
+                }
+                else
+                {
+                    savePath += submissionFiles.GetJavaFileName(textline) + ".java";
+                }
+                    
+            }
             else if (fileType == "Python")
-                savePath = "./SubmissionFiles/" + submissionID + ".py";
+                savePath += submissionID + ".py";
 
             textEditor.Save(savePath);
+        }
+
+        private string findText()
+        {
+            ICSharpCode.AvalonEdit.Document.DocumentLine line;
+            string textline;
+
+            for (int i = 1; i <= textEditor.Document.Lines.Count; i++)
+            {
+                line = textEditor.Document.GetLineByNumber(i);
+                textline = textEditor.Document.GetText(line.Offset, line.Length);
+                if (textline.Contains("public class"))
+                    return textline;
+            }
+            return "";
         }
     }
 }

@@ -8,15 +8,218 @@ using System.Diagnostics;
 
 namespace Judger
 {
-    class Judge
+    public class Judge
     {
-/*        System.Diagnostics.Process process = new System.Diagnostics.Process();
-        System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+        protected Process_Commnand process_Commnand = new Process_Commnand();
 
-        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-        startInfo.FileName = "cmd.exe";
-        startInfo.Arguments = "/C copy /b Image1.jpg + Archive.rar Image2.jpg";
-        process.StartInfo = startInfo;
-        process.Start();*/
+        public Judge() { }
+
+        public string Create_Dire(string subID)
+        {
+            System.IO.Directory.CreateDirectory("./SubmissionFiles/" + subID );
+
+            return ("./SubmissionFiles/" + subID + "/");
+        }
+
+
+
+        public string JudgeProblem(string language, string subID, string output)
+        {
+            string result = "";
+
+            if (language == "Python")
+                result = process_Commnand.runInPython(subID, "", output);
+            else if (language == "Java")
+                result =  process_Commnand.runInJava(subID, "", output);
+            else if (language == "C")
+                result =  process_Commnand.runInC(subID, "", output);
+            else if (language == "C++")
+                result =  process_Commnand.runInCpp(subID, "", output);
+
+            return result;
+
+        }
+
+        public string JudgeProblem(string language, string subID, string input, string output)
+        {
+            string result = "";
+
+            if (language == "Python")
+                result = process_Commnand.runInPython(subID, input, output);
+            else if (language == "Java")
+                result = process_Commnand.runInJava(subID, input, output);
+            else if (language == "C")
+                result = process_Commnand.runInC(subID, input, output);
+            else if (language == "C++")
+                result = process_Commnand.runInCpp(subID, input, output);
+
+            return result;
+
+        }
+        
     }
+
+    public class Process_Commnand
+    {
+        public Process_Commnand() { }
+
+        public string runInC(string subID, string input, string output)
+        {
+            Process run_proc = new Process();
+            Process compile_proc = new Process();
+
+            string WorkingDirectory = "./SubmissionFiles/" + subID;
+            string CompileArguments = "/c gcc " + subID + ".c -o " + subID;
+            string RunArguments = "/c " + subID;
+
+
+            //Compile Command 
+            compile_proc.StartInfo.RedirectStandardOutput = true;
+            compile_proc.StartInfo.UseShellExecute = false;
+            compile_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
+            compile_proc.StartInfo.FileName = "cmd.exe";
+            compile_proc.StartInfo.Arguments = @CompileArguments;
+
+            //Compile start
+            compile_proc.Start();
+            compile_proc.WaitForExit();
+
+            //Run Command
+            run_proc.StartInfo.RedirectStandardOutput = true;
+            run_proc.StartInfo.RedirectStandardInput = true;
+            run_proc.StartInfo.UseShellExecute = false;
+            run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
+            run_proc.StartInfo.FileName = "cmd.exe";
+            run_proc.StartInfo.Arguments = @RunArguments;
+
+            //Run start and input the string
+            run_proc.Start();
+            run_proc.StandardInput.WriteLine(input);
+            string output2 = run_proc.StandardOutput.ReadToEnd();
+            run_proc.WaitForExit();
+
+
+            if (output2.Length == 0)
+                return "Compile Error";
+            if (output2.Contains(output))
+                return "Correct";
+            return "Wrong";
+        }
+
+        public string runInCpp(string subID, string input, string output)
+        {
+            Process run_proc = new Process();
+            Process compile_proc = new Process();
+
+            string WorkingDirectory = "./SubmissionFiles/" + subID;
+            string CompileArguments = "/c g++ " + subID + ".c -o " + subID;
+            string RunArguments = "/c " + subID;
+
+
+            //Compile Command 
+            compile_proc.StartInfo.RedirectStandardOutput = true;
+            compile_proc.StartInfo.UseShellExecute = false;
+            compile_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
+            compile_proc.StartInfo.FileName = "cmd.exe";
+            compile_proc.StartInfo.Arguments = @CompileArguments;
+
+            //Compile start
+            compile_proc.Start();
+            compile_proc.WaitForExit();
+
+            //Run Command
+            run_proc.StartInfo.RedirectStandardOutput = true;
+            run_proc.StartInfo.RedirectStandardInput = true;
+            run_proc.StartInfo.UseShellExecute = false;
+            run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
+            run_proc.StartInfo.FileName = "cmd.exe";
+            run_proc.StartInfo.Arguments = @RunArguments;
+
+            //Run start and input the string
+            run_proc.Start();
+            run_proc.StandardInput.WriteLine(input);
+            string outputRun = run_proc.StandardOutput.ReadToEnd();
+            run_proc.WaitForExit();
+
+
+            if (outputRun.Length == 0)
+                return "Compile Error";
+            if (outputRun.Contains(output))
+                return "Correct";
+            return "Wrong";
+        }
+
+        public string runInJava(string subID, string input, string output)
+        {
+            Process run_proc = new Process();
+            Process compile_proc = new Process();
+
+            string WorkingDirectory = "./SubmissionFiles/" + subID;
+            string CompileArguments = "/c javac " + subID + ".java";
+            string RunArguments = "-classpath " + WorkingDirectory + " " + subID;
+
+
+            //Compile Command 
+            compile_proc.StartInfo.RedirectStandardOutput = true;
+            compile_proc.StartInfo.UseShellExecute = false;
+            compile_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
+            compile_proc.StartInfo.FileName = "cmd.exe";
+            compile_proc.StartInfo.Arguments = @CompileArguments;
+
+            //Compile start
+            compile_proc.Start();
+            compile_proc.WaitForExit();
+
+            //Run Command
+            run_proc.StartInfo.RedirectStandardOutput = true;
+            run_proc.StartInfo.RedirectStandardInput = true;
+            run_proc.StartInfo.UseShellExecute = false;
+            run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
+            run_proc.StartInfo.FileName = "java";
+            run_proc.StartInfo.Arguments = @RunArguments;
+
+            //Run start and input the string
+            run_proc.Start();
+            run_proc.StandardInput.WriteLine(input);
+            string outputRun = run_proc.StandardOutput.ReadToEnd();
+            run_proc.WaitForExit();
+
+
+            if (outputRun.Length == 0)
+                return "Compile Error";
+            if (outputRun.Contains(output))
+                return "Correct";
+            return "Wrong";
+        }
+
+        public string runInPython(string subID, string input, string output)
+        {
+            Process compile_run_proc = new Process();
+
+            string WorkingDirectory = "./SubmissionFiles/" + subID;
+            string CompileArguments = subID + ".py";
+
+
+            //Compile Command 
+            compile_run_proc.StartInfo.RedirectStandardOutput = true;
+            compile_run_proc.StartInfo.RedirectStandardInput = true;
+            compile_run_proc.StartInfo.UseShellExecute = false;
+            compile_run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
+            compile_run_proc.StartInfo.FileName = @"python.exe";
+            compile_run_proc.StartInfo.Arguments = @CompileArguments;
+
+            //Run Command
+            compile_run_proc.Start();
+            compile_run_proc.StandardInput.WriteLine(input);
+            string outputRun = compile_run_proc.StandardOutput.ReadToEnd();
+            compile_run_proc.WaitForExit();
+
+            if (outputRun.Length == 0)
+                return "Compile Error";
+            if (outputRun.Contains(output))
+                return "Correct";
+            return "Wrong";
+        }
+    }
+
 }
