@@ -30,10 +30,10 @@
             <TextBlock Name="OutputDescription"  HorizontalAlignment="Left" Margin="50,204,0,0" TextWrapping="Wrap" FontSize="13" Text="Output a+b" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="380" Foreground="DimGray"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="29,242,0,0" TextWrapping="Wrap" FontSize="15" Text="Samput Input 1" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="131" Foreground="DodgerBlue"/>
-            <TextBox Name="SampleInput" Height="24" HorizontalAlignment="Left" Margin="29,269,0,0"  VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.626,0.375"  />
+            <TextBox Name="SampleInput" Height="24" HorizontalAlignment="Left" Margin="29,269,0,0"  VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.626,0.375"  IsReadOnly="True"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="299,242,0,0" TextWrapping="Wrap" FontSize="15" Text="Samput Output 1" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="131" Foreground="DodgerBlue"/>
-            <TextBox Name="SampleOutput" Height="24" HorizontalAlignment="Left" Margin="299,269,0,0"  VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.626,0.375" />
+            <TextBox Name="SampleOutput" Height="24" HorizontalAlignment="Left" Margin="299,269,0,0"  VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.626,0.375" IsReadOnly="True"/>
 
         </Grid>
 
