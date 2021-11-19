@@ -20,15 +20,21 @@ namespace ProblemPage
 {
     public partial class ProblemPage : Page
     {
-        Judger.Judge Judge = new Judger.Judge();
-        Submission.AllSubmission submission = new Submission.AllSubmission();
+        protected string userID;
 
-        public ObservableCollection<Model.PiePoint> PieCollection;
-        public SubmissionFiles.SubmissionFiles submissionFiles = new SubmissionFiles.SubmissionFiles();
+        protected Judger.Judge Judge = new Judger.Judge();
+        protected Submission.AllSubmission submission = new Submission.AllSubmission();
+        protected Submission.SubmissionFiles submissionFiles = new Submission.SubmissionFiles();
 
-        public ProblemPage(Model.Problems selectedProblem)
+        protected ObservableCollection<Model.PiePoint> PieCollection;
+        
+        Model.Problems selectedProblem;
+
+        public ProblemPage(Model.Problems selectedProblem, string userID)
         {
             InitializeComponent();
+            this.selectedProblem = selectedProblem;
+            this.userID = userID;
 
             //init problem information
             ProblemID.Text = selectedProblem.ID;
@@ -92,6 +98,13 @@ namespace ProblemPage
             string submissionID = submissionFiles.generateID();
             saveFile(submissionID, LanguageComboBox.SelectedItem.ToString());
 
+            string result = Judge.JudgeProblem(LanguageComboBox.SelectedItem.ToString(), submissionID, selectedProblem);
+            showresult.Content = result;
+
+            submission.CreateSubmission(submissionID, userID, selectedProblem.ID, LanguageComboBox.SelectedItem.ToString(), result);
+            MessageBox.Show("Done for submission. Your result is " + result);
+
+            
         }
         private void saveFile (string submissionID, string fileType)
         {

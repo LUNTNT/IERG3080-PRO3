@@ -21,9 +21,48 @@ namespace Judger
             return ("./SubmissionFiles/" + subID + "/");
         }
 
+        public string JudgeProblem(string language, string subID, Model.Problems problem)
+        {
+            string[] result = new string[problem.testInput.Length];
 
+            for (int i = 0; i < problem.testInput.Length; i++)
+            {
+                if (problem.testInput[i] == "None")
+                    result[i] = JudgeCase(language, subID, problem.testOutput[i]);
+                else 
+                    result[i] = JudgeCase(language, subID, problem.testOutput[i], problem.testOutput[i]);
 
-        public string JudgeProblem(string language, string subID, string output)
+                if (result[i] == "Wrong")
+                    return result[i];
+                if (result[i] == "Compile Error")
+                    return result[i];
+            }
+
+            return "Correct";
+        }
+
+        //special for java
+        public string JudgeProblem(string language, string subID, string filename, Model.Problems problem)
+        {
+            string[] result = new string[problem.testInput.Length];
+
+            for (int i = 0; i < problem.testInput.Length; i++)
+            {
+                if (problem.testInput[i] == "None")
+                    result[i] = JudgeCase(language, subID, filename, "",  problem.testOutput[i]);
+                else
+                    result[i] = JudgeCase(language, subID, filename, problem.testOutput[i], problem.testOutput[i]);
+
+                if (result[i] == "Wrong")
+                    return result[i];
+                if (result[i] == "Compile Error")
+                    return result[i];
+            }
+
+            return "Correct";
+        }
+
+        protected string JudgeCase(string language, string subID, string output)
         {
             string result = "";
 
@@ -38,7 +77,7 @@ namespace Judger
 
         }
 
-        public string JudgeProblem(string language, string subID, string input, string output)
+        protected string JudgeCase(string language, string subID, string input, string output)
         {
             string result = "";
 
@@ -54,7 +93,7 @@ namespace Judger
         }
 
         //special for java
-        public string JudgeProblem(string language, string subID, string filename, string input, string output)
+        protected string JudgeCase(string language, string subID, string filename, string input, string output)
         {
             string result = "";
 
@@ -84,6 +123,7 @@ namespace Judger
             //Compile Command 
             compile_proc.StartInfo.RedirectStandardOutput = true;
             compile_proc.StartInfo.UseShellExecute = false;
+            compile_proc.StartInfo.CreateNoWindow = true;
             compile_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             compile_proc.StartInfo.FileName = "cmd.exe";
             compile_proc.StartInfo.Arguments = @CompileArguments;
@@ -95,6 +135,7 @@ namespace Judger
             //Run Command
             run_proc.StartInfo.RedirectStandardOutput = true;
             run_proc.StartInfo.RedirectStandardInput = true;
+            run_proc.StartInfo.CreateNoWindow = true;
             run_proc.StartInfo.UseShellExecute = false;
             run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             run_proc.StartInfo.FileName = "cmd.exe";
@@ -120,13 +161,14 @@ namespace Judger
             Process compile_proc = new Process();
 
             string WorkingDirectory = "./SubmissionFiles/" + subID;
-            string CompileArguments = "/c g++ " + subID + ".c -o " + subID;
+            string CompileArguments = "/c g++ " + subID + ".cpp -o " + subID;
             string RunArguments = "/c " + subID;
 
 
             //Compile Command 
             compile_proc.StartInfo.RedirectStandardOutput = true;
             compile_proc.StartInfo.UseShellExecute = false;
+            compile_proc.StartInfo.CreateNoWindow = true;
             compile_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             compile_proc.StartInfo.FileName = "cmd.exe";
             compile_proc.StartInfo.Arguments = @CompileArguments;
@@ -138,6 +180,7 @@ namespace Judger
             //Run Command
             run_proc.StartInfo.RedirectStandardOutput = true;
             run_proc.StartInfo.RedirectStandardInput = true;
+            run_proc.StartInfo.CreateNoWindow = true;
             run_proc.StartInfo.UseShellExecute = false;
             run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             run_proc.StartInfo.FileName = "cmd.exe";
@@ -170,6 +213,7 @@ namespace Judger
             //Compile Command 
             compile_proc.StartInfo.RedirectStandardOutput = true;
             compile_proc.StartInfo.UseShellExecute = false;
+            compile_proc.StartInfo.CreateNoWindow = true;
             compile_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             compile_proc.StartInfo.FileName = "cmd.exe";
             compile_proc.StartInfo.Arguments = @CompileArguments;
@@ -182,6 +226,7 @@ namespace Judger
             run_proc.StartInfo.RedirectStandardOutput = true;
             run_proc.StartInfo.RedirectStandardInput = true;
             run_proc.StartInfo.UseShellExecute = false;
+            run_proc.StartInfo.CreateNoWindow = true;
             run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             run_proc.StartInfo.FileName = "java";
             run_proc.StartInfo.Arguments = @RunArguments;
@@ -212,6 +257,7 @@ namespace Judger
             compile_run_proc.StartInfo.RedirectStandardOutput = true;
             compile_run_proc.StartInfo.RedirectStandardInput = true;
             compile_run_proc.StartInfo.UseShellExecute = false;
+            compile_run_proc.StartInfo.CreateNoWindow = true;
             compile_run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             compile_run_proc.StartInfo.FileName = @"python.exe";
             compile_run_proc.StartInfo.Arguments = @CompileArguments;

@@ -52,6 +52,7 @@
 
                 ShowLineNumbers="True"
                 FontSize="10pt" Margin="0,56,20,39" HorizontalAlignment="Right" Width="876"/>
+            <Label Name="showresult" HorizontalAlignment="Left" Height="25" Margin="23,302,0,0" VerticalAlignment="Top" Width="103"/>
         </Grid>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="1030,56,0,0" VerticalAlignment="Top" Width="191" Background="White" />
 

@@ -102,10 +102,9 @@
     <Compile Include="ProblemPage.xaml.cs">
       <DependentUpon>ProblemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SubmissionFiles\submissions.cs" />
-    <Compile Include="System\Submission.cs" />
-    <Compile Include="System\Problem.cs" />
-    <Compile Include="System\User.cs" />
+    <Compile Include="DB Service\Submission.cs" />
+    <Compile Include="DB Service\Problem.cs" />
+    <Compile Include="DB Service\User.cs" />
     <Compile Include="Database\Model.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="MainWindow.xaml.cs">

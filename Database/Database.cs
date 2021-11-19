@@ -35,7 +35,7 @@ namespace Database
         public List<Model.Users> GetAll()
         {
             var filter = Builders<Model.Users>.Filter.Empty;
-            var users = UserColl.Find(filter).ToList();
+            var users = UserColl.Find(filter).Project<Model.Users>(Builders<Model.Users>.Projection.Exclude(user => user._id)).ToList();
 
             return users;
         }
@@ -52,7 +52,7 @@ namespace Database
             var filter = Builders<Model.Users>.Filter.Eq("userID", newuser.userID);
             var user = UserColl.Find(filter).ToList();
 
-            if (user != null)
+            if (user.Count != 0)
                 return false;
             else
                 UserColl.InsertOne(newuser);
@@ -106,7 +106,7 @@ namespace Database
             var filter = Builders<Model.Problems>.Filter.Eq("ID", newproblem.ID);
             var problem = ProblemColl.Find(filter).ToList();
 
-            if (problem != null)
+            if (problem.Count != 0)
                 return false;
             else
                 ProblemColl.InsertOne(newproblem);
@@ -176,7 +176,7 @@ namespace Database
             var filter = Builders<Model.Submissions>.Filter.Eq("submissionID", newsubmission.submissionID);
             var submission = SubmissionColl.Find(filter).ToList();
 
-            if (submission != null)
+            if (submission.Count != 0)
                 return false;
             else
                 SubmissionColl.InsertOne(newsubmission);

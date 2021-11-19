@@ -23,12 +23,14 @@ namespace IERG3080_PRO3_UploadProblem
     public partial class StudentPage : Window
     {
         protected JudgeSystem JudgeSystem = new JudgeSystem();
+        public Model.Users UserInfo = new Model.Users();
 
         public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
 
         public StudentPage(Model.Users UserInfo)
         {
             InitializeComponent();
+            this.UserInfo = UserInfo;
             Username.Text = UserInfo.name;
 
             List<Model.Problems> list_problem = JudgeSystem.browse_problem_list();
@@ -52,7 +54,7 @@ namespace IERG3080_PRO3_UploadProblem
             // Some operations with this row
             Model.Problems selectedProblem = (Model.Problems)row.Item;
             // this.Content = new ProblemPage.ProblemPage(selectedProblem);
-            Main.Content = new ProblemPage.ProblemPage(selectedProblem);
+            Main.Content = new ProblemPage.ProblemPage(selectedProblem, UserInfo.userID);
         }
         
 

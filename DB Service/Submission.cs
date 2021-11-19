@@ -8,7 +8,7 @@ namespace Submission
 {
     public class AllSubmission
     {
-        protected Database.SubmissionCol SubmissionColl;
+        protected Database.SubmissionCol SubmissionColl = new Database.SubmissionCol();
 
         public List<Model.Submissions> AllSubmissions
         {
@@ -57,6 +57,47 @@ namespace Submission
             }
 
             return SolvedProblem;
+        }
+
+        public bool CreateSubmission(string submissionID, string userID, string problemID, string language, string result)
+        {
+            Model.Submissions NewSubmit = new Model.Submissions() ;
+
+            NewSubmit._id = submissionID;
+            NewSubmit.submissionID = submissionID;
+            NewSubmit.userID = userID;
+            NewSubmit.problemID = problemID;
+
+            NewSubmit.language = language;
+            NewSubmit.result = result;
+
+            DateTime nowtime = DateTime.Now;
+            NewSubmit.time = nowtime.ToString();
+
+            return SubmissionColl.InsertOne(NewSubmit);
+            
+    }
+    }
+
+    public class SubmissionFiles
+    {
+        public SubmissionFiles() { }
+
+
+        public string generateID()
+        {
+            return Guid.NewGuid().ToString("N");
+        }
+
+        public string GetJavaFileName(string lineText)
+        {
+            string[] temp = lineText.Split(' ', '{', '(');
+            for (int i = 0; i < (temp.Length - 2); i++)
+            {
+                if (temp[i] == "public" && temp[i + 1] == "class")
+                    return temp[i + 2];
+            }
+            return "";
         }
     }
 }

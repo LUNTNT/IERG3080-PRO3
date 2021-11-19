@@ -23,13 +23,15 @@ namespace IERG3080_PRO3_UploadProblem
     public partial class MainWindow : Window
     {
         protected JudgeSystem JudgeSystem = new JudgeSystem();
-        
+        public Model.Users UserInfo = new Model.Users();
+
         public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
 
 
         public MainWindow(Model.Users UserInfo)
         {
             InitializeComponent();
+            this.UserInfo = UserInfo;
 
             Username.Text = UserInfo.name;
 
@@ -63,7 +65,7 @@ namespace IERG3080_PRO3_UploadProblem
             // Some operations with this row
             Model.Problems selectedProblem = (Model.Problems)row.Item;
              // this.Content = new ProblemPage.ProblemPage(selectedProblem);
-            Main.Content = new ProblemPage.ProblemPage(selectedProblem);
+            Main.Content = new ProblemPage.ProblemPage(selectedProblem, UserInfo.userID);
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
