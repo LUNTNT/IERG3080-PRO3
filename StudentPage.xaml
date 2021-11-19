@@ -5,60 +5,69 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IERG3080_PRO3"
       mc:Ignorable="d" 
-      Width="1066.083" Height="702"
-      Title="StudentPage"
+      Width="1276.083" Height="856.5"
+      Title="Local Judging System"
       Background="White">
 
     <Grid>
+
         <Label Content="Local Judging System" FontSize="20" FontFamily="Helvetica" Margin="0,10,0,0"/>
-        <TabControl HorizontalAlignment="Left"  Width="1066"  Background="LightGray" Margin="0,10,0,0"  >
+        <TabControl HorizontalAlignment="Left"  Width="1268"  Background="LightGray" Margin="0,10,0,0" SelectionChanged="TabControl_SelectionChanged"  >
             <TabItem Header="Home" FontSize="15" Margin="258,0,-306,0" FontFamily="Helvetica" Height="38" VerticalAlignment="Bottom" RenderTransformOrigin="0.642,0.421"  >
 
             </TabItem>
 
-            <TabItem Header="Problems" FontSize="15" Margin="305,0,-331,0" FontFamily="Helvetica">
-                <Grid Margin="30,32,181,62" Background="White">
+            <TabItem Header="Problems" FontSize="15" Margin="305,0,-331,0" FontFamily="Helvetica" Height="38" VerticalAlignment="Top">
+                <Grid Margin="30,32,30,62" Background="White">
                     <TextBlock HorizontalAlignment="Left" Margin="19,19,0,0" TextWrapping="Wrap" FontSize="20" Text="Problem List" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="134" Foreground="DimGray"/>
-                    <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="0,56,0,0" Background="White" HorizontalAlignment="Left" Width="841">
+                    <DataGrid x:Name="dataGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="0,56,0,0" Background="White" HorizontalAlignment="Left" Width="1202">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Width="100">
+                            <DataGridTextColumn Width="100" Binding="{Binding ID}">
                                 <DataGridTextColumn.Header>
-                                    <TextBlock FontSize="15" Text="#" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center"  FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
+                                    <TextBlock FontSize="15" Text="#" Width="44" HorizontalAlignment="Stretch" TextAlignment="Center"  FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="200">
+                            <DataGridTextColumn Width="300" Binding="{Binding title}">
                                 <DataGridTextColumn.Header>
-                                    <TextBlock FontSize="15" Text="Title" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" />
+                                    <TextBlock FontSize="15" Text="Title" Width="58" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" />
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="150">
+                            <DataGridTextColumn Width="300" Binding="{Binding difficulty}">
                                 <DataGridTextColumn.Header >
-                                    <TextBlock FontSize="15" Text="Level" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
+                                    <TextBlock FontSize="15" Text="Level" Width="75" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="150">
-                                <DataGridTextColumn.Header>
-                                    <TextBlock FontSize="15" Text="Total" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
+                            <DataGridTextColumn Width="200" Binding="{Binding author}">
+                                <DataGridTextColumn.Header  >
+                                    <TextBlock FontSize="15" Text="Author" Width="70" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="150">
+                            <DataGridTextColumn Width="180" Binding="{Binding acRate}">
                                 <DataGridTextColumn.Header >
                                     <TextBlock FontSize="15" Text="AC Rate" Width="77" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
-                            <DataGridTextColumn Width="150">
-                                <DataGridTextColumn.Header >
-                                    <TextBlock FontSize="15" Text="Tags" Width="50" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
+                            <DataGridTextColumn Width="200" Binding="{Binding timeLimit}">
+                                <DataGridTextColumn.Header  >
+                                    <TextBlock FontSize="15" Text="Time Limit" Width="95" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                                 </DataGridTextColumn.Header>
                             </DataGridTextColumn>
 
                         </DataGrid.Columns>
+
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick" />
+                            </Style>
+                        </DataGrid.Resources>
+
                     </DataGrid>
+                    <Frame x:Name="Main" Margin="-32,-34,-32,-65" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                 </Grid>
 
             </TabItem>
@@ -69,9 +78,11 @@
 
 
         </TabControl>
-        <TextBlock Name="Username" HorizontalAlignment="Left" Margin="829,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Height="19" RenderTransformOrigin="0.5,0.5" FontSize="15"/>
-        <Button Name="Logout" Content="Logout" HorizontalAlignment="Left" Margin="956,19,0,0" VerticalAlignment="Top" Width="75" Click="Logout_Click"/>
-        
+        <TextBlock  HorizontalAlignment="Left" Margin="890,25,0,0" TextWrapping="Wrap" Text="Welcome, " VerticalAlignment="Top" Width="73" Height="19" RenderTransformOrigin="-0.164,0.611" FontSize="15" Foreground="Black"/>
+
+        <TextBlock Name="Username" HorizontalAlignment="Left" Margin="971,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Height="19" RenderTransformOrigin="-0.164,0.611" FontSize="15" Foreground="Black"/>
+        <Button Name="Logout" Content="Logout" HorizontalAlignment="Left" Margin="1138,25,0,0" VerticalAlignment="Top" Width="74" Click="Logout_Click"/>
+
     </Grid>
 
 </Window>

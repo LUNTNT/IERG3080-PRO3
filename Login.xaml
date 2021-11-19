@@ -5,12 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IERG3080_PRO3_Login"
       mc:Ignorable="d"
-      Title="Login" Height="311.167" Width="484.833"
+      Title="Local Judging System" Height="311.167" Width="484.833"
          
  >
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" Text="Welcome to Local Judging System" VerticalAlignment="Top" Height="19" Width="322" FontSize="15" FontWeight="DemiBold" FontFamily="Helvetica" Foreground="DimGray"/>
-        <Rectangle  HorizontalAlignment="Stretch"  VerticalAlignment="Center" Fill="DarkGray" Height="1" Margin="10,53,10,226"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,26,0,0" TextWrapping="Wrap" Text="Welcome to Local Judging System" VerticalAlignment="Top" Height="19" Width="322" FontSize="15" FontWeight="DemiBold" FontFamily="Helvetica" Foreground="DimGray"/>
         
         <Grid Margin="10,59,10,10">
             <TextBlock Height="23" HorizontalAlignment="Left" Margin="29,24,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="73" />
@@ -19,7 +18,7 @@
             <TextBox Height="24" HorizontalAlignment="Left" Margin="198,23,0,0" Name="textBoxUserName" VerticalAlignment="Top" Width="222" RenderTransformOrigin="0.626,0.375" />
             <PasswordBox Height="24" HorizontalAlignment="Left" Margin="198,87,0,0" Name="textBoxPassword" VerticalAlignment="Top" Width="222" />
 
-            <Button Margin="29,148,37,24" Background="DodgerBlue" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
+            <Button Margin="29,148,37,24" Background="DodgerBlue" RenderTransformOrigin="0.5,0.5" Click="Button_Click" IsDefault="True">
                 <TextBlock Text="Login" Foreground="White"/>
             </Button>
         </Grid>

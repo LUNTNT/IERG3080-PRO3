@@ -58,6 +58,11 @@ namespace IERG3080_PRO3
              // this.Content = new ProblemPage.ProblemPage(selectedProblem);
             Main.Content = new ProblemPage.ProblemPage(selectedProblem);
         }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 
 
