@@ -8,12 +8,12 @@ namespace Model
 {
     public class Users
     {
-        public object _id;
-        public string userID;
-        public string password;
-        public string userType;
+        public object _id { get; set; }
+        public string userID { get; set; }
+        public string password { get; set; }
+        public string userType { get; set; }
 
-        public string name;
+        public string name { get; set; }
     }
 
     public class Problems
@@ -36,17 +36,23 @@ namespace Model
         public string[] tags { get; set; }
 
         public bool isLive { get; set; }
+
+        public string[] testInput { get; set; }
+        public string[] testOutput { get; set; }
+
+
     }
 
     public class Submissions
     {
-        public object _id;
-        public string submissionID;
-        public string userID;
-        public string problemID;
+        public object _id { get; set; }
+        public string submissionID { get; set; }
+        public string userID { get; set; }
+        public string problemID { get; set; }
 
-        public string programpath;
-        public string result;
+        public string language { get; set; }
+        public string time { get; set; }
+        public string result { get; set; }
     }
 
     public class PiePoint

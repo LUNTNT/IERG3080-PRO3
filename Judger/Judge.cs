@@ -29,8 +29,6 @@ namespace Judger
 
             if (language == "Python")
                 result = process_Commnand.runInPython(subID, "", output);
-            else if (language == "Java")
-                result =  process_Commnand.runInJava(subID, "", output);
             else if (language == "C")
                 result =  process_Commnand.runInC(subID, "", output);
             else if (language == "C++")
@@ -46,8 +44,6 @@ namespace Judger
 
             if (language == "Python")
                 result = process_Commnand.runInPython(subID, input, output);
-            else if (language == "Java")
-                result = process_Commnand.runInJava(subID, input, output);
             else if (language == "C")
                 result = process_Commnand.runInC(subID, input, output);
             else if (language == "C++")
@@ -56,7 +52,19 @@ namespace Judger
             return result;
 
         }
-        
+
+        //special for java
+        public string JudgeProblem(string language, string subID, string filename, string input, string output)
+        {
+            string result = "";
+
+            if (language == "Java")
+                result = process_Commnand.runInJava(subID, filename, input, output);
+
+            return result;
+
+        }
+
     }
 
     public class Process_Commnand
@@ -149,14 +157,14 @@ namespace Judger
             return "Wrong";
         }
 
-        public string runInJava(string subID, string input, string output)
+        public string runInJava(string subID, string filename, string input, string output)
         {
             Process run_proc = new Process();
             Process compile_proc = new Process();
 
             string WorkingDirectory = "./SubmissionFiles/" + subID;
-            string CompileArguments = "/c javac " + subID + ".java";
-            string RunArguments = "-classpath " + WorkingDirectory + " " + subID;
+            string CompileArguments = "/c javac " + filename + ".java";
+            string RunArguments = "-classpath " + WorkingDirectory + " " + filename;
 
 
             //Compile Command 
