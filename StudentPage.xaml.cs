@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace IERG3080_PRO3
+namespace IERG3080_PRO3_UploadProblem
 {
 
     public partial class StudentPage : Window

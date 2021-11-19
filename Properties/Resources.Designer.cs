@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IERG3080_PRO3.Properties
+namespace IERG3080_PRO3_UploadProblem.Properties
 {
 
 

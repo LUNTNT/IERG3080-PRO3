@@ -1,4 +1,5 @@
 ﻿using IERG3080_PRO3_Login;
+using IERG3080_PRO3_UploadProblem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace IERG3080_PRO3
+namespace IERG3080_PRO3_UploadProblem
 {
     public partial class MainWindow : Window
     {
@@ -47,6 +48,12 @@ namespace IERG3080_PRO3
             IERG3080_PRO3_Login.Login backlogin = new Login();
             backlogin.Show();
             this.Close();
+        }
+
+        private void UploadProblem_Clck(object sender, RoutedEventArgs e)
+        {
+            IERG3080_PRO3_UploadProblem.UploadProblem upload = new UploadProblem();
+            upload.Show();
         }
 
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
