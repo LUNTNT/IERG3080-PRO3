@@ -23,5 +23,11 @@ namespace IERG3080_PRO3_UploadProblem
         {
             InitializeComponent();
         }
+
+        private void Upload_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+        }
     }
 }

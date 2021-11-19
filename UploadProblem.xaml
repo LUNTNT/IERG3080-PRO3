@@ -32,7 +32,8 @@
         <TextBox Name="ProblemMemoryLimit" HorizontalAlignment="Left" Height="23" Margin="259,321,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="223"/>
         <TextBox Name="ProblemACRate" HorizontalAlignment="Left" Height="23" Margin="259,354,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="223"/>
         <TextBox Name="ProblemTags" HorizontalAlignment="Left" Height="23" Margin="259,386,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="223"/>
-        <Button Name="Upload" Content="Upload" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="215,429,0,0"/>
+        
+        <Button Name="Upload" Content="Upload" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="215,429,0,0" Click="Upload_Click"/>
 
     </Grid>
 </Window>
