@@ -53,6 +53,8 @@ namespace Model
         public string language { get; set; }
         public string time { get; set; }
         public string result { get; set; }
+
+        public string author { get; set; }
     }
 
     public class PiePoint

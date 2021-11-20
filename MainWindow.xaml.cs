@@ -75,7 +75,7 @@ namespace MainWindow
     {
         //After done front end and put into it
         protected ProblemSystem.ProgramProblem problems = new ProblemSystem.ProgramProblem();
-
+        protected Submission.AllSubmission submission = new Submission.AllSubmission();
 
         public JudgeSystem() { } // constructor
 
@@ -90,12 +90,19 @@ namespace MainWindow
         {
             return problems.AllProblems;
         }
+
         public List<Model.Problems> browse_problem(string problemID)
         {
             return problems.SelectProblem(problemID);
         }
 
-        public void browse_records() { }
+
+
+        public List<Model.Submissions> browse_records() {
+            return submission.AllSubmissions;
+        }
+
+
         public void browse_statistics() { }
 
 

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Login;
+using UploadProblem;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//using System.Windows.Forms;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace RecordTab
 {
@@ -20,9 +26,47 @@ namespace RecordTab
     /// </summary>
     public partial class RecordTab : Page
     {
+        protected JudgeSystem JudgeSystem = new JudgeSystem();
+
+        public Model.Users UserInfo = new Model.Users();
+
+        public ObservableCollection<Model.Submissions> AllList = new ObservableCollection<Model.Submissions>();
+
+        protected User.User users = new User.User();
+
+        protected Model.Submissions Submissions = new Model.Submissions();
+
         public RecordTab()
         {
             InitializeComponent();
+            List<Model.Submissions> list_problem = JudgeSystem.browse_record();
+            foreach (Model.Submissions temp1 in list_problem)
+                AllList.Add(temp1);
+
+            dataGrid.ItemsSource = AllList;
+        }
+
+        private void Main_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
         }
     }
+
+    public class JudgeSystem
+    {
+        //After done front end and put into it
+        protected Submission.AllSubmission submission = new Submission.AllSubmission();
+
+        public JudgeSystem() { } // constructor
+
+
+        public List<Model.Submissions> browse_record()
+        {
+            return submission.AllSubmissions;
+        }
+
+        
+
+    }
+
 }
