@@ -12,9 +12,11 @@
       Background="LightGray" Height="774" Width="1266">
 
     <Grid ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" >
-        <Grid Margin="30,56,317,391" Background="White">
+        <Grid Margin="30,20,317,427" Background="White">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="496*"/>
+                <ColumnDefinition Width="258*"/>
+                <ColumnDefinition Width="165*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Name="ProblemID" HorizontalAlignment="Left" Margin="29,20,0,0" TextWrapping="Wrap" FontSize="20" Text="#X" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="35" Foreground="DimGray"/>
@@ -33,11 +35,11 @@
             <TextBox Name="SampleInput" Height="24" HorizontalAlignment="Left" Margin="29,269,0,0"  VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.626,0.375"  IsReadOnly="True"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="299,242,0,0" TextWrapping="Wrap" FontSize="15" Text="Samput Output 1" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="131" Foreground="DodgerBlue"/>
-            <TextBox Name="SampleOutput" Height="24" HorizontalAlignment="Left" Margin="299,269,0,0"  VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.626,0.375" IsReadOnly="True"/>
+            <TextBox Name="SampleOutput" Height="24" HorizontalAlignment="Left" Margin="299,269,0,0"  VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.626,0.375" IsReadOnly="True" Grid.ColumnSpan="2"/>
 
         </Grid>
 
-        <Grid Background="White" Margin="30,415,317,25">
+        <Grid Background="White" Margin="30,375,317,65">
             <TextBlock HorizontalAlignment="Left" Margin="23,21,0,0" TextWrapping="Wrap" FontSize="15" Text="Language:" FontFamily="Helvetica" VerticalAlignment="Top" Height="21" Width="82" Foreground="DimGray"/>
             <ComboBox Margin="110,21,0,0" Name="LanguageComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="21" RenderTransformOrigin="0.943,0.933" Foreground="Black" SelectionChanged="LanguageComboBox_SelectionChanged">
 
@@ -54,9 +56,9 @@
                 FontSize="10pt" Margin="0,56,20,39" HorizontalAlignment="Right" Width="876"/>
             <Label Name="showresult" HorizontalAlignment="Left" Height="25" Margin="23,302,0,0" VerticalAlignment="Top" Width="103"/>
         </Grid>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="1030,56,0,0" VerticalAlignment="Top" Width="191" Background="White" />
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="1030,22,0,0" VerticalAlignment="Top" Width="191" Background="White" />
 
-        <Grid HorizontalAlignment="Left" Height="221" Margin="1030,145,0,0" VerticalAlignment="Top" Width="191" Background="White">
+        <Grid HorizontalAlignment="Left" Height="221" Margin="1030,99,0,0" VerticalAlignment="Top" Width="191" Background="White">
             <TextBlock  HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" FontSize="13" Text="ID" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="35" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
             <TextBlock Name="ID" HorizontalAlignment="Left" Margin="111,52,0,0" TextWrapping="Wrap" FontSize="13" Text="0000" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
 
@@ -74,7 +76,7 @@
 
         </Grid>
 
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="267" Margin="1030,415,0,0" VerticalAlignment="Top" Width="191" Background="White" RenderTransformOrigin="0.504,0.711" >
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="267" Margin="1030,375,0,0" VerticalAlignment="Top" Width="191" Background="White" RenderTransformOrigin="0.504,0.711" >
             <Grid>
                 <dvc:Chart  Name="pieChart" Title="AC Rate" Margin="10,10,10,-7" Height="262" BorderBrush="#00000000" DataContext="{Binding}" IsHitTestVisible="False" IsTabStop="True" ForceCursor="True" >
                     <dvc:PieSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True" Margin="10" />

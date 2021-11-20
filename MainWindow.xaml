@@ -9,14 +9,18 @@
 
     <Grid>
 
-        <Label Content="Local Judging System" FontSize="20" FontFamily="Helvetica" Margin="0,10,0,-0.2" Grid.ColumnSpan="2"/>
-        <TabControl HorizontalAlignment="Left"  Width="1268"  Background="LightGray" Margin="0,10,0,0" SelectionChanged="TabControl_SelectionChanged"  >
-            <TabItem Header="Home" FontSize="15" Margin="258,0,-306,0" FontFamily="Helvetica" Height="38" VerticalAlignment="Bottom" RenderTransformOrigin="0.642,0.421"  >
+        <Label Content="Local Judging System" FontSize="20" FontFamily="Helvetica" Margin="0,10,0,0"/>
+        <Button Content="Problem" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Margin="315,17,0,0" VerticalAlignment="Top" Width="115" Click="ProblemTab_Click" Height="30" Background="AliceBlue"/>
+        <Frame x:Name="Tab" Margin="0,49,0,0" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" NavigationUIVisibility="Hidden" />
 
-            </TabItem>
 
-            <TabItem Header="Problems" FontSize="15" Margin="305,0,-331,0" FontFamily="Helvetica"  >
-                <Grid ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <!--<TabControl HorizontalAlignment="Left"  Width="1268"  Background="LightGray" Margin="0,10,0,0" SelectionChanged="TabControl_SelectionChanged"  >-->
+        <!--<TabItem Header="Home" FontSize="15" Margin="258,0,-306,0" FontFamily="Helvetica" Height="38" VerticalAlignment="Bottom" RenderTransformOrigin="0.642,0.421"  >
+
+            </TabItem>-->
+
+        <!--<TabItem Header="Problems" FontSize="15" Margin="305,0,-331,0" FontFamily="Helvetica"  >-->
+        <!--<Grid ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <Grid Margin="30,32,30,62" Background="White"  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <TextBlock HorizontalAlignment="Left" Margin="19,19,0,0" TextWrapping="Wrap" FontSize="20" Text="Problem List" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="134" Foreground="DimGray"/>
                         <DataGrid x:Name="dataGrid" ItemsSource="{Binding AllList}" AutoGenerateColumns="False" IsReadOnly="True"  Margin="0,56,0,0" Background="White" HorizontalAlignment="Left" Width="1202" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto">
@@ -70,19 +74,19 @@
                         <Frame x:Name="Main" Margin="-32,-34,-32,-65" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 
                     </Grid>
-                </Grid>
+                </Grid>-->
 
-            </TabItem>
+        <!--</TabItem>-->
 
-            <TabItem Header="Record" FontSize="15" Margin="329,0,-329,0" FontFamily="Helvetica" Width="100">
+        <!--<TabItem Header="Record" FontSize="15" Margin="329,0,-329,0" FontFamily="Helvetica" Width="100">
 
             </TabItem>
             <TabItem Header="Statistics" FontSize="15" Margin="328,0,-328,0" FontFamily="Helvetica" Width="100">
 
-            </TabItem>
+            </TabItem>-->
 
 
-        </TabControl>
+        <!--</TabControl>-->
         <TextBlock  HorizontalAlignment="Left" Margin="890,25,0,0" TextWrapping="Wrap" Text="Welcome, " VerticalAlignment="Top" Width="73" Height="19" RenderTransformOrigin="-0.164,0.611" FontSize="15" Foreground="Black"/>
 
         <TextBlock Name="Username" HorizontalAlignment="Left" Margin="971,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Height="19" RenderTransformOrigin="-0.164,0.611" FontSize="15" Foreground="Black"/>

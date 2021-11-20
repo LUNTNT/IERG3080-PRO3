@@ -1,5 +1,6 @@
 ﻿using IERG3080_PRO3_Login;
 using IERG3080_PRO3_UploadProblem;
+using IERG3080_PRO3_ProblemTab;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,10 @@ namespace IERG3080_PRO3_UploadProblem
 {
     public partial class MainWindow : Window
     {
-        protected JudgeSystem JudgeSystem = new JudgeSystem();
+        //protected JudgeSystem JudgeSystem = new JudgeSystem();
         public Model.Users UserInfo = new Model.Users();
 
-        public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
+        //public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
 
 
         public MainWindow(Model.Users UserInfo)
@@ -35,12 +36,12 @@ namespace IERG3080_PRO3_UploadProblem
 
             Username.Text = UserInfo.name;
 
-            List<Model.Problems> list_problem = JudgeSystem.browse_problem_list();
-            foreach (Model.Problems temp1 in list_problem)
-                AllList.Add(temp1);
+            //List<Model.Problems> list_problem = JudgeSystem.browse_problem_list();
+            //foreach (Model.Problems temp1 in list_problem)
+            //    AllList.Add(temp1);
 
 
-            dataGrid.ItemsSource = AllList;
+            //dataGrid.ItemsSource = AllList;
 
         }
 
@@ -52,21 +53,31 @@ namespace IERG3080_PRO3_UploadProblem
             this.Close();
         }
 
-        private void UploadProblem_Clck(object sender, RoutedEventArgs e)
+        private void ProblemTab_Click(object sender, RoutedEventArgs e)
         {
-            IERG3080_PRO3_UploadProblem.UploadProblem upload = new UploadProblem();
-            upload.Show();
+            IERG3080_PRO3_ProblemTab.ProblemTab problemTab = new ProblemTab();
+            Tab.Content = new ProblemTab();
         }
 
-        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
-        {
 
-            DataGridRow row = sender as DataGridRow;
-            // Some operations with this row
-            Model.Problems selectedProblem = (Model.Problems)row.Item;
-             // this.Content = new ProblemPage.ProblemPage(selectedProblem);
-            Main.Content = new ProblemPage.ProblemPage(selectedProblem, UserInfo.userID);
-        }
+
+
+
+        //private void UploadProblem_Clck(object sender, RoutedEventArgs e)
+        //{
+        //    IERG3080_PRO3_UploadProblem.UploadProblem upload = new UploadProblem();
+        //    upload.Show();
+        //}
+
+        //private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        //{
+
+        //    DataGridRow row = sender as DataGridRow;
+        //    // Some operations with this row
+        //    Model.Problems selectedProblem = (Model.Problems)row.Item;
+        //     // this.Content = new ProblemPage.ProblemPage(selectedProblem);
+        //    Main.Content = new ProblemPage.ProblemPage(selectedProblem, UserInfo.userID);
+        //}
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
