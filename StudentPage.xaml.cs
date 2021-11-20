@@ -23,24 +23,22 @@ namespace StudentWindow
 
     public partial class StudentWindow : Window
     {
-        protected JudgeSystem JudgeSystem = new JudgeSystem();
+        //protected JudgeSystem JudgeSystem = new JudgeSystem();
         public Model.Users UserInfo = new Model.Users();
 
-        public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
+        //public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
+
 
         public StudentWindow(Model.Users UserInfo)
         {
             InitializeComponent();
             this.UserInfo = UserInfo;
+
             Username.Text = UserInfo.name;
 
-            List<Model.Problems> list_problem = JudgeSystem.browse_problem_list();
-            foreach (Model.Problems temp1 in list_problem)
-                AllList.Add(temp1);
 
-
-            dataGrid.ItemsSource = AllList;
         }
+
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
@@ -48,16 +46,16 @@ namespace StudentWindow
             backlogin.Show();
             this.Close();
         }
-        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
-        {
 
-            DataGridRow row = sender as DataGridRow;
-            // Some operations with this row
-            Model.Problems selectedProblem = (Model.Problems)row.Item;
-            // this.Content = new ProblemPage.ProblemPage(selectedProblem);
-            Main.Content = new ProblemPage.ProblemPage(selectedProblem, UserInfo.userID);
+        private void ProblemTab_Click(object sender, RoutedEventArgs e)
+        {
+            ProblemTab.ProblemTab problemTab = new ProblemTab.ProblemTab();
+            Tab.Content = new ProblemTab.ProblemTab();
         }
-        
+        private void RecordTab_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -69,8 +67,6 @@ namespace StudentWindow
     {
         //After done front end and put into it
         protected ProblemSystem.ProgramProblem problems = new ProblemSystem.ProgramProblem();
-
-
 
 
         public JudgeSystemForStudent() { } // constructor

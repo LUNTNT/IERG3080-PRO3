@@ -1,6 +1,6 @@
 ﻿using Login;
-using IERG3080_PRO3_UploadProblem;
-using ProblemTab;
+using UploadProblem;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,58 +19,64 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace MainWindow
+
+namespace ProblemTabForAdmin
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// ProblemTab.xaml 的互動邏輯
+    /// </summary>
+    public partial class ProblemTabForAdmin : Page
     {
-        //protected JudgeSystem JudgeSystem = new JudgeSystem();
+        protected JudgeSystem JudgeSystem = new JudgeSystem();
+
         public Model.Users UserInfo = new Model.Users();
 
-        //public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
+        public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
 
+        protected User.User users = new User.User();
 
-        public MainWindow(Model.Users UserInfo)
+        public ProblemTabForAdmin()
         {
             InitializeComponent();
-            this.UserInfo = UserInfo;
 
-            Username.Text = UserInfo.name;
+            List<Model.Problems> list_problem = JudgeSystem.browse_problem_list();
+            foreach (Model.Problems temp1 in list_problem)
+                AllList.Add(temp1);
 
 
+            dataGrid.ItemsSource = AllList;
         }
 
-       
-        private void Logout_Click(object sender, RoutedEventArgs e)
+
+        private void UploadProblem_Clck(object sender, RoutedEventArgs e)
         {
-            Login.Login backlogin = new Login.Login();
-            backlogin.Show();
-            this.Close();
+
+            UploadProblem.UploadProblem upload = new UploadProblem.UploadProblem();
+            upload.Show();
         }
 
-        private void ProblemTab_Click(object sender, RoutedEventArgs e)
+        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            ProblemTabForAdmin.ProblemTabForAdmin problemTab = new ProblemTabForAdmin.ProblemTabForAdmin();
-            Tab.Content = new ProblemTabForAdmin.ProblemTabForAdmin();
+
+            DataGridRow row = sender as DataGridRow;
+            // Some operations with this row
+            Model.Problems selectedProblem = (Model.Problems)row.Item;
+            // this.Content = new ProblemPage.ProblemPage(selectedProblem);
+            Main.Content = new ProblemPage.ProblemPage(selectedProblem, UserInfo.userID);
         }
 
-        private void RecordTab_Click(object sender, RoutedEventArgs e)
-        {
-        }
-        private void StatisticTab_Click(object sender, RoutedEventArgs e)
-        {
-        }
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Main_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
 
         }
     }
 
-
-
     public class JudgeSystem
     {
         //After done front end and put into it
         protected ProblemSystem.ProgramProblem problems = new ProblemSystem.ProgramProblem();
+
+
 
 
         public JudgeSystem() { } // constructor
@@ -97,4 +103,5 @@ namespace MainWindow
 
         public void load_login_page() { }
     }
+
 }

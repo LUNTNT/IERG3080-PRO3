@@ -13,9 +13,9 @@
         
         <Button Content="Problem" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Margin="315,17,0,0" VerticalAlignment="Top" Width="115" Click="ProblemTab_Click" Height="30" Background="AliceBlue"/>
         
-        <Button Content="Record" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Margin="460,17,0,0" VerticalAlignment="Top" Width="115" Click="ProblemTab_Click" Height="30" Background="AliceBlue" RenderTransformOrigin="0.664,0.522"/>
+        <Button Content="Record" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Margin="460,17,0,0" VerticalAlignment="Top" Width="115" Click="RecordTab_Click" Height="30" Background="AliceBlue" RenderTransformOrigin="0.664,0.522"/>
         
-        <Button Content="Statistic" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Margin="604,17,0,0" VerticalAlignment="Top" Width="115" Click="ProblemTab_Click" Height="30" Background="AliceBlue" RenderTransformOrigin="-0.235,0.456"/>
+        <Button Content="Statistic" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Margin="604,17,0,0" VerticalAlignment="Top" Width="115" Click="StatisticTab_Click" Height="30" Background="AliceBlue" RenderTransformOrigin="-0.235,0.456"/>
 
         <TextBlock  HorizontalAlignment="Left" Margin="890,25,0,0" TextWrapping="Wrap" Text="Welcome, " VerticalAlignment="Top" Width="73" Height="19" RenderTransformOrigin="-0.164,0.611" FontSize="15" Foreground="Black"/>
 

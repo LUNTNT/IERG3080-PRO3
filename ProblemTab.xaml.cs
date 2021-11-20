@@ -33,6 +33,7 @@ namespace ProblemTab
 
         public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
 
+        protected User.User users = new User.User();
 
         public ProblemTab()
         {
@@ -49,6 +50,7 @@ namespace ProblemTab
 
         private void UploadProblem_Clck(object sender, RoutedEventArgs e)
         {
+
             UploadProblem.UploadProblem upload = new UploadProblem.UploadProblem();
             upload.Show();
         }
