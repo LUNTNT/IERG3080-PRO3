@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IERG3080_PRO3_Login
+namespace Login
 {
     public partial class Login : Window
     {
@@ -61,13 +61,13 @@ namespace IERG3080_PRO3_Login
 
         public void load_student_page(Model.Users UserInfo) 
         {
-            IERG3080_PRO3_UploadProblem.StudentPage main1 = new IERG3080_PRO3_UploadProblem.StudentPage(UserInfo);
+            StudentWindow.StudentWindow main1 = new StudentWindow.StudentWindow(UserInfo);
             main1.Show();
             this.Close();
         }
         public void load_admin_page(Model.Users UserInfo) 
         {
-            IERG3080_PRO3_UploadProblem.MainWindow main2 = new IERG3080_PRO3_UploadProblem.MainWindow(UserInfo);
+            MainWindow.MainWindow main2 = new MainWindow.MainWindow(UserInfo);
             main2.Show();
             this.Close();
         }

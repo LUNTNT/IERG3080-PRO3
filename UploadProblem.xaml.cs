@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace IERG3080_PRO3_UploadProblem
+namespace UploadProblem
 {
     /// <summary>
     /// UploadProblem.xaml 的互動邏輯

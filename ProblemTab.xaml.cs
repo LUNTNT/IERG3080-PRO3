@@ -1,5 +1,6 @@
-﻿using IERG3080_PRO3_Login;
-using IERG3080_PRO3_UploadProblem;
+﻿using Login;
+using UploadProblem;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 
-namespace IERG3080_PRO3_ProblemTab
+namespace ProblemTab
 {
     /// <summary>
     /// ProblemTab.xaml 的互動邏輯
@@ -27,6 +28,7 @@ namespace IERG3080_PRO3_ProblemTab
     public partial class ProblemTab : Page
     {
         protected JudgeSystem JudgeSystem = new JudgeSystem();
+
         public Model.Users UserInfo = new Model.Users();
 
         public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
@@ -35,8 +37,6 @@ namespace IERG3080_PRO3_ProblemTab
         public ProblemTab()
         {
             InitializeComponent();
-
-
 
             List<Model.Problems> list_problem = JudgeSystem.browse_problem_list();
             foreach (Model.Problems temp1 in list_problem)
@@ -49,7 +49,7 @@ namespace IERG3080_PRO3_ProblemTab
 
         private void UploadProblem_Clck(object sender, RoutedEventArgs e)
         {
-            IERG3080_PRO3_UploadProblem.UploadProblem upload = new UploadProblem();
+            UploadProblem.UploadProblem upload = new UploadProblem.UploadProblem();
             upload.Show();
         }
 

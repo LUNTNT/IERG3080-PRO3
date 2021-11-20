@@ -1,4 +1,4 @@
-﻿using IERG3080_PRO3_Login;
+﻿using Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,18 +16,19 @@ using System.Windows.Shapes;
 //using System.Windows.Forms;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using MainWindow;
 
-namespace IERG3080_PRO3_UploadProblem
+namespace StudentWindow
 {
 
-    public partial class StudentPage : Window
+    public partial class StudentWindow : Window
     {
         protected JudgeSystem JudgeSystem = new JudgeSystem();
         public Model.Users UserInfo = new Model.Users();
 
         public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
 
-        public StudentPage(Model.Users UserInfo)
+        public StudentWindow(Model.Users UserInfo)
         {
             InitializeComponent();
             this.UserInfo = UserInfo;
@@ -43,7 +44,7 @@ namespace IERG3080_PRO3_UploadProblem
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-            IERG3080_PRO3_Login.Login backlogin = new IERG3080_PRO3_Login.Login();
+            Login.Login backlogin = new Login.Login();
             backlogin.Show();
             this.Close();
         }

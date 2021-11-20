@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace IERG3080_PRO3_UploadProblem
+namespace IERG3080_PRO3
 {
     /// <summary>
     /// App.xaml 的互動邏輯
