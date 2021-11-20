@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Local Judging System" Height="500" Width="500">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,13,0,0" TextWrapping="Wrap" Text="Upload Problem:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,13,0,0" TextWrapping="Wrap" Text="Upload A Problem:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
         <Rectangle Fill="DarkGray" HorizontalAlignment="Left" Height="1" Margin="12,45,0,0" VerticalAlignment="Top" Width="470"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,57,0,0" TextWrapping="Wrap" Text="Problem ID:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"><Run Text="Problem "/><Run Text="Title"/><Run Text=":"/></TextBlock>
@@ -19,7 +19,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"><Run Text="Time Limit"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"><Run Text="Memory Limit"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,354,0,0" TextWrapping="Wrap" Text="AC Rate:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,387,0,0" TextWrapping="Wrap" Text="Tags:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
 
         <TextBox Name="ProblemID" HorizontalAlignment="Left" Height="23" Margin="260,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
         <TextBox Name="ProblemTitle" HorizontalAlignment="Left" Height="23" Margin="260,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
@@ -31,9 +30,8 @@
         <TextBox Name="ProblemTimeLimit" HorizontalAlignment="Left" Height="23" Margin="259,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="223"/>
         <TextBox Name="ProblemMemoryLimit" HorizontalAlignment="Left" Height="23" Margin="259,321,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="223"/>
         <TextBox Name="ProblemACRate" HorizontalAlignment="Left" Height="23" Margin="259,354,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="223"/>
-        <TextBox Name="ProblemTags" HorizontalAlignment="Left" Height="23" Margin="259,386,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="223"/>
         
-        <Button Name="Upload" Content="Upload" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="215,429,0,0" Click="Upload_Click"/>
+        <Button Name="Upload" Content="Upload" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="215,408,0,0" Click="Upload_Click"/>
 
     </Grid>
 </Window>

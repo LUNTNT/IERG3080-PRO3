@@ -19,14 +19,30 @@ namespace UploadProblem
     /// </summary>
     public partial class UploadProblem : Window
     {
+
+        protected Model.Problems uploadproblems = new Model.Problems();
+        protected Database.ProblemCol ProblemCol = new Database.ProblemCol();
+
         public UploadProblem()
         {
             InitializeComponent();
         }
 
+
         private void Upload_Click(object sender, RoutedEventArgs e)
         {
-            
+            ProblemID.Text = uploadproblems.ID;
+            ProblemTitle.Text = uploadproblems.title;
+            ProblemDescription.Text = uploadproblems.description;
+            ProblemInput.Text = uploadproblems.inputSample;
+            ProblemOutput.Text = uploadproblems.outputSample;
+            ProblemAuthor.Text = uploadproblems.author;
+            ProblemLevel.Text = uploadproblems.difficulty;
+            ProblemTimeLimit.Text = uploadproblems.timeLimit.ToString();
+            ProblemMemoryLimit.Text = uploadproblems.memoryLimit.ToString();
+            ProblemACRate.Text = uploadproblems.acRate.ToString();
+
+            ProblemCol.InsertOne(uploadproblems);
 
         }
     }

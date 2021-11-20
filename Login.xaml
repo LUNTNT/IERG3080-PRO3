@@ -12,8 +12,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,26,0,0" TextWrapping="Wrap" Text="Welcome to Local Judging System" VerticalAlignment="Top" Height="19" Width="322" FontSize="15" FontWeight="DemiBold" FontFamily="Helvetica" Foreground="DimGray"/>
         
         <Grid Margin="10,59,10,10">
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="29,24,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="73" />
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="29,87,0,0" Name="textBlockLastName" Text="Password:" VerticalAlignment="Top" Width="73" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="29,24,0,0" Text="First Name:" VerticalAlignment="Top" Width="73" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="29,87,0,0" Text="Password:" VerticalAlignment="Top" Width="73" />
 
             <TextBox Height="24" HorizontalAlignment="Left" Margin="198,23,0,0" Name="textBoxUserName" VerticalAlignment="Top" Width="222" RenderTransformOrigin="0.626,0.375" />
             <PasswordBox Height="24" HorizontalAlignment="Left" Margin="198,87,0,0" Name="textBoxPassword" VerticalAlignment="Top" Width="222" />

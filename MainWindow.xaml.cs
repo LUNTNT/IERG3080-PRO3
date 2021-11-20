@@ -1,6 +1,7 @@
 ﻿using Login;
-using IERG3080_PRO3_UploadProblem;
+using UploadProblem;
 using ProblemTab;
+using RecordTab;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,9 @@ namespace MainWindow
 
         private void RecordTab_Click(object sender, RoutedEventArgs e)
         {
+            RecordTab.RecordTab recordtab = new RecordTab.RecordTab();
+            Tab.Content = new RecordTab.RecordTab();
+
         }
         private void StatisticTab_Click(object sender, RoutedEventArgs e)
         {
