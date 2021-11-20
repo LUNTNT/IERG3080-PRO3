@@ -32,6 +32,7 @@ namespace UploadProblem
         private void Upload_Click(object sender, RoutedEventArgs e)
         {
             ProblemID.Text = uploadproblems.ID;
+            ProblemID.Text = (string)uploadproblems._id;
             ProblemTitle.Text = uploadproblems.title;
             ProblemDescription.Text = uploadproblems.description;
             ProblemInput.Text = uploadproblems.inputSample;
