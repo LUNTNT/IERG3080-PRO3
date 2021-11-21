@@ -22,7 +22,7 @@
         <TextBox Name="ProblemSInput" HorizontalAlignment="Left" Height="45" Margin="260,317,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
         <TextBox Name="ProblemSOutput" HorizontalAlignment="Left" Height="45" Margin="260,384,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
 
-        <Button Name="Upload" Content="Upload" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Margin="749,477,0,0" Click="Upload_Click" Height="29"/>
+        <Button Name="Upload" Content="Upload" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Margin="749,477,0,0" Click="Upload_Click" Height="29" Background="AliceBlue"/>
         <Rectangle Fill="DarkGray" HorizontalAlignment="Left" Height="1" Margin="277,272,0,0" VerticalAlignment="Top" Width="440" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -38,9 +38,9 @@
         <TextBox  x:Name="InputCase" HorizontalAlignment="Left" Height="23" Margin="633,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" />
         <Label Content="Output Case:" HorizontalAlignment="Left" Margin="501,123,0,0" VerticalAlignment="Top" Width="98" FontSize="14"/>
         <TextBox  x:Name="OutputCase" HorizontalAlignment="Left" Height="23" Margin="633,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" />
-        <Button  x:Name="AddCase" Content="Add" HorizontalAlignment="Left" Margin="790,174,0,0" VerticalAlignment="Top" Width="75" Click="AddCase_Click"/>
+        <Button  x:Name="AddCase" Content="Add" HorizontalAlignment="Left" Margin="790,174,0,0" VerticalAlignment="Top" Width="75" Click="AddCase_Click" Background="AliceBlue"/>
         <ListBox x:Name="CaseBox" HorizontalAlignment="Left" Height="236" Margin="512,174,0,0" VerticalAlignment="Top" Width="247"/>
-        <Button x:Name="DeleteCase" Content="Delete" HorizontalAlignment="Left" Margin="790,239,0,0" VerticalAlignment="Top" Width="75" Click="DeleteCase_Click"/>
+        <Button x:Name="DeleteCase" Content="Delete" HorizontalAlignment="Left" Margin="790,239,0,0" VerticalAlignment="Top" Width="75" Click="DeleteCase_Click" Background="AliceBlue"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"><Run Text="Input "/><Run Text="Description:"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"><Run Text="Input "/><Run Text="Description:"/></TextBlock>
         <TextBox x:Name="InputDescrip" HorizontalAlignment="Left" Height="39" Margin="260,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222"/>
