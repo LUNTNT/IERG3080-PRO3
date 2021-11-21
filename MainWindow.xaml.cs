@@ -2,6 +2,8 @@
 using UploadProblem;
 using ProblemTab;
 using RecordTab;
+using StatisticTab;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +63,9 @@ namespace MainWindow
         }
         private void StatisticTab_Click(object sender, RoutedEventArgs e)
         {
+            StatisticTab.StatisticTab statisticTab = new StatisticTab.StatisticTab(UserInfo);
+            Tab.Content = new StatisticTab.StatisticTab(UserInfo);
+
         }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

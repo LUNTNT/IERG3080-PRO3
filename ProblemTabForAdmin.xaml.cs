@@ -36,7 +36,6 @@ namespace ProblemTabForAdmin
         public ProblemTabForAdmin(Model.Users UserInfo)
         {
             InitializeComponent();
-
             this.UserInfo = UserInfo;
 
             List<Model.Problems> list_problem = JudgeSystem.browse_problem_list();
@@ -45,6 +44,8 @@ namespace ProblemTabForAdmin
 
 
             dataGrid.ItemsSource = AllList;
+            
+             
         }
 
 

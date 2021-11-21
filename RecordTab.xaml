@@ -13,21 +13,21 @@
             <TextBlock HorizontalAlignment="Left" Margin="19,19,0,0" TextWrapping="Wrap" FontSize="20" Text="Record" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="134" Foreground="DimGray"/>
             <DataGrid x:Name="dataGrid" ItemsSource="{Binding AllList}" AutoGenerateColumns="False" IsReadOnly="True"  Margin="0,56,0,10" Background="White" HorizontalAlignment="Left" Width="1270" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="150" Binding="{Binding submissionID}">
+                    <DataGridTextColumn Width="130" Binding="{Binding problemID}">
                         <DataGridTextColumn.Header >
-                            <TextBlock FontSize="15" Text="ID" Width="139" HorizontalAlignment="Stretch" TextAlignment="Center"  FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
+                            <TextBlock FontSize="15" Text="Problem" Width="65" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>                    
+                    
+                    <DataGridTextColumn Width="250" Binding="{Binding submissionID}">
+                        <DataGridTextColumn.Header >
+                            <TextBlock FontSize="15" Text="ID" Width="46" HorizontalAlignment="Stretch" TextAlignment="Center"  FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
 
-                    <DataGridTextColumn Width="250" Binding="{Binding problemID}">
-                        <DataGridTextColumn.Header >
-                            <TextBlock FontSize="15" Text="Problem" Width="242" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
-                        </DataGridTextColumn.Header>
-                    </DataGridTextColumn>
-
-                    <DataGridTextColumn Width="200" Binding="{Binding language}">
+                    <DataGridTextColumn Width="150" Binding="{Binding language}">
                         <DataGridTextColumn.Header  >
-                            <TextBlock FontSize="15" Text="Language" Width="192" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" RenderTransformOrigin="0.5,0.5">
+                            <TextBlock FontSize="15" Text="Language" Width="103" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" RenderTransformOrigin="0.5,0.5">
 
                             </TextBlock>
                         </DataGridTextColumn.Header>
@@ -35,19 +35,19 @@
 
                     <DataGridTextColumn Width="200" Binding="{Binding time}">
                         <DataGridTextColumn.Header  >
-                            <TextBlock FontSize="15" Text="Time" Width="182" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
+                            <TextBlock FontSize="15" Text="Time" Width="79" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
                     
                     <DataGridTextColumn  Binding="{Binding author}">
                         <DataGridTextColumn.Header  >
-                            <TextBlock FontSize="15" Text="Author" Width="259" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
+                            <TextBlock FontSize="15" Text="Author" Width="90" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
 
-                    <DataGridTextColumn Width="200" Binding="{Binding result}" >
+                    <DataGridTextColumn  Width="200" Binding="{Binding result}" >
                         <DataGridTextColumn.Header >
-                            <TextBlock FontSize="15" Text="Status" Width="193" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" />
+                            <TextBlock FontSize="15" Text="Status" Width="96" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" />
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
                 </DataGrid.Columns>
