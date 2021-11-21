@@ -33,11 +33,11 @@ namespace ProblemTabForAdmin
 
         public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
 
-        protected User.User users = new User.User();
-
-        public ProblemTabForAdmin()
+        public ProblemTabForAdmin(Model.Users UserInfo)
         {
             InitializeComponent();
+
+            this.UserInfo = UserInfo;
 
             List<Model.Problems> list_problem = JudgeSystem.browse_problem_list();
             foreach (Model.Problems temp1 in list_problem)
@@ -51,8 +51,13 @@ namespace ProblemTabForAdmin
         private void UploadProblem_Clck(object sender, RoutedEventArgs e)
         {
 
-            UploadProblem.UploadProblem upload = new UploadProblem.UploadProblem();
+            UploadProblem.UploadProblem upload = new UploadProblem.UploadProblem(UserInfo.userID);
             upload.Show();
+        }
+        private void EditProblem_Click(object sender, RoutedEventArgs e)
+        {
+            EditProblem.EditProblem edit = new EditProblem.EditProblem(UserInfo.userID);
+            edit.Show();
         }
 
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
@@ -69,6 +74,8 @@ namespace ProblemTabForAdmin
         {
 
         }
+
+
     }
 
     public class JudgeSystem
@@ -82,12 +89,6 @@ namespace ProblemTabForAdmin
         public JudgeSystem() { } // constructor
 
 
-        public void logout()
-        {
-            load_login_page();
-
-        }
-
         public List<Model.Problems> browse_problem_list()
         {
             return problems.AllProblems;
@@ -97,11 +98,6 @@ namespace ProblemTabForAdmin
             return problems.SelectProblem(problemID);
         }
 
-        public void browse_records() { }
-        public void browse_statistics() { }
-
-
-        public void load_login_page() { }
     }
 
 }

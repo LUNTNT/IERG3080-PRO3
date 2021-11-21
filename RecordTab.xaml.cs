@@ -32,13 +32,14 @@ namespace RecordTab
 
         public ObservableCollection<Model.Submissions> AllList = new ObservableCollection<Model.Submissions>();
 
-        protected User.User users = new User.User();
-
         protected Model.Submissions Submissions = new Model.Submissions();
 
-        public RecordTab()
+        public RecordTab(Model.Users UserInfo)
         {
             InitializeComponent();
+
+            this.UserInfo = UserInfo;
+
             List<Model.Submissions> list_problem = JudgeSystem.browse_record();
             foreach (Model.Submissions temp1 in list_problem)
                 AllList.Add(temp1);

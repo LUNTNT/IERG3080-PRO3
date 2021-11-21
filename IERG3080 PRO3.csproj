@@ -82,6 +82,9 @@
     <Compile Include="ProblemTab.xaml.cs">
       <DependentUpon>ProblemTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditProblem.xaml.cs">
+      <DependentUpon>EditProblem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UploadProblem.xaml.cs">
       <DependentUpon>UploadProblem.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
     <Page Include="ProblemPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditProblem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UploadProblem.xaml">
       <SubType>Designer</SubType>

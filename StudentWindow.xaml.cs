@@ -50,8 +50,7 @@ namespace StudentWindow
 
         private void ProblemTab_Click(object sender, RoutedEventArgs e)
         {
-            ProblemTab.ProblemTab problemTab = new ProblemTab.ProblemTab();
-            Tab.Content = new ProblemTab.ProblemTab();
+            Tab.Content = new ProblemTab.ProblemTab(UserInfo);
         }
         private void RecordTab_Click(object sender, RoutedEventArgs e)
         {

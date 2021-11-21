@@ -12,41 +12,40 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace UploadProblem
+namespace EditProblem
 {
     /// <summary>
     /// UploadProblem.xaml 的互動邏輯
     /// </summary>
-    public partial class UploadProblem : Window
+    public partial class EditProblem : Window
     {
 
         protected Model.Problems uploadproblems = new Model.Problems();
         protected Database.ProblemCol ProblemCol = new Database.ProblemCol();
 
-        public UploadProblem(string userID)
+        public EditProblem(string userID)
         {
             InitializeComponent();
             uploadproblems.author = userID;
+         
+            ProblemTitle.Text = uploadproblems.title;
+            ProblemDescription.Text = uploadproblems.description;
+            InputDescrip.Text = uploadproblems.inputContent;
+            OutputDescrip.Text = uploadproblems.outputContent;
+            ProblemSInput.Text = uploadproblems.inputSample;
+            ProblemSOutput.Text = uploadproblems.outputSample;
+            Problemlevel.SelectedItem = uploadproblems.difficulty;
 
-            Problemlevel.Items.Add("Easy");
-            Problemlevel.Items.Add("Medium");
-            Problemlevel.Items.Add("Hard");
+            for (int i = 0; i < uploadproblems.testInput.Length; i++)
+            {
+                CaseBox.Items.Add(uploadproblems.testInput[i] + " " + uploadproblems.testOutput[i]);
+            }
+
         }
 
 
         private void Upload_Click(object sender, RoutedEventArgs e)
         {
-            if (ProblemID.Text == "")
-            {
-                MessageBox.Show("Fill in all boxes.");
-                return;
-            }
-            else
-            {
-                uploadproblems.ID = ProblemID.Text;
-                uploadproblems._id = ProblemID.Text;
-            }
-
             if (ProblemTitle.Text == "")
             {
                 MessageBox.Show("Fill in all boxes.");
@@ -123,8 +122,7 @@ namespace UploadProblem
             bool result = ProblemCol.InsertOne(uploadproblems);
             if (result == false)
                 MessageBox.Show("Problem ID is existed.. ");
-            else
-                MessageBox.Show("Problem uploaded.");
+
         }
 
         private void AddCase_Click(object sender, RoutedEventArgs e)

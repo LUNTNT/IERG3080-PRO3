@@ -42,9 +42,9 @@
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
 
-                    <DataGridTextColumn Width="200" Binding="{Binding timeLimit}">
+                    <DataGridTextColumn Width="200" Binding="{Binding memoryLimit}">
                         <DataGridTextColumn.Header  >
-                            <TextBlock FontSize="15" Text="Time Limit" Width="89" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
+                            <TextBlock FontSize="15" Text="Memory Limit" Width="89" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
 

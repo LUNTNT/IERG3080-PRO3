@@ -46,8 +46,6 @@ namespace ProblemPage
             SampleOutput.Text = selectedProblem.outputSample;
             
             ID.Text = selectedProblem.ID;
-            TimeLimit.Text = selectedProblem.timeLimit.ToString() + "MS";
-            MemoryLimit.Text = selectedProblem.memoryLimit.ToString() + "MB";
             CreatedBy.Text = selectedProblem.author;
             Level.Text = selectedProblem.difficulty;
 

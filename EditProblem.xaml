@@ -1,28 +1,25 @@
-﻿<Window x:Class="UploadProblem.UploadProblem"
+﻿<Window x:Class="EditProblem.EditProblem"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:UploadProblem"
+        xmlns:local="clr-namespace:EditProblem"
         mc:Ignorable="d"
         Title="Local Judging System" Height="563" Width="892">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,13,0,0" TextWrapping="Wrap" Text="Upload A Problem:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,13,0,0" TextWrapping="Wrap" Text="Edit A Problem:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
         <Rectangle Fill="DarkGray" HorizontalAlignment="Left" Height="1" Margin="12,45,0,0" VerticalAlignment="Top" Width="864"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,57,0,0" TextWrapping="Wrap" Text="Problem ID:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"><Run Text="Problem "/><Run Text="Title"/><Run Text=":"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,123,0,0" TextWrapping="Wrap" Text="OverAll Description:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"><Run Text="Problem "/><Run Text="Title"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,108,0,0" TextWrapping="Wrap" Text="OverAll Description:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15" Text="Input Sample:"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"><Run Text="Output Sample"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,448,0,0" TextWrapping="Wrap" Text="Level:" VerticalAlignment="Top" RenderTransformOrigin="0.392,-0.601" FontSize="15"/>
-
-        <TextBox Name="ProblemID" HorizontalAlignment="Left" Height="23" Margin="260,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
-        <TextBox Name="ProblemTitle" HorizontalAlignment="Left" Height="23" Margin="260,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
-        <TextBox Name="ProblemDescription" HorizontalAlignment="Left" Height="58" Margin="260,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
+        <TextBox Name="ProblemTitle" HorizontalAlignment="Left" Height="34" Margin="260,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
+        <TextBox Name="ProblemDescription" HorizontalAlignment="Left" Height="73" Margin="260,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
         <TextBox Name="ProblemSInput" HorizontalAlignment="Left" Height="45" Margin="260,317,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
         <TextBox Name="ProblemSOutput" HorizontalAlignment="Left" Height="45" Margin="260,384,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
 
-        <Button Name="Upload" Content="Upload" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Margin="749,477,0,0" Click="Upload_Click" Height="29"/>
+        <Button Name="Upload" Content="Update" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Margin="749,477,0,0" Click="Upload_Click" Height="29"/>
         <Rectangle Fill="DarkGray" HorizontalAlignment="Left" Height="1" Margin="277,272,0,0" VerticalAlignment="Top" Width="440" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>

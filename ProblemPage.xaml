@@ -61,17 +61,11 @@
             <TextBlock  HorizontalAlignment="Left" Margin="10,52,0,0" TextWrapping="Wrap" FontSize="13" Text="ID" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="35" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
             <TextBlock Name="ID" HorizontalAlignment="Left" Margin="124,52,0,0" TextWrapping="Wrap" FontSize="13" Text="0000" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
 
-            <TextBlock  HorizontalAlignment="Left" Margin="10,79,0,0" TextWrapping="Wrap" FontSize="13" Text="Time Limit" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="73" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
-            <TextBlock Name="TimeLimit" HorizontalAlignment="Left" Margin="124,80,0,0" TextWrapping="Wrap" FontSize="13" Text="1000MS" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
+            <TextBlock  HorizontalAlignment="Left" Margin="10,79,0,0" TextWrapping="Wrap" FontSize="13" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="106" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"><Run Text="Cr"/><Run Text="ea"/><Run Text="ted By"/></TextBlock>
+            <TextBlock Name="CreatedBy" HorizontalAlignment="Left" Margin="124,79,0,0" TextWrapping="Wrap" FontSize="13" Text="abc" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
 
-            <TextBlock  HorizontalAlignment="Left" Margin="10,107,0,0" TextWrapping="Wrap" FontSize="13" Text="Memory Limit" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="125" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
-            <TextBlock Name="MemoryLimit" HorizontalAlignment="Left" Margin="124,107,0,0" TextWrapping="Wrap" FontSize="13" Text="256MB" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
-
-            <TextBlock  HorizontalAlignment="Left" Margin="10,134,0,0" TextWrapping="Wrap" FontSize="13" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="106" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"><Run Text="Cr"/><Run Text="ea"/><Run Text="ted By"/></TextBlock>
-            <TextBlock Name="CreatedBy" HorizontalAlignment="Left" Margin="124,134,0,0" TextWrapping="Wrap" FontSize="13" Text="abc" FontFamily="Helvetica" VerticalAlignment="Top" Height="24" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
-
-            <TextBlock  HorizontalAlignment="Left" Margin="10,161,0,0" TextWrapping="Wrap" FontSize="13" Text="Level" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="35" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
-            <TextBlock Name="Level" HorizontalAlignment="Left" Margin="124,161,0,0" TextWrapping="Wrap" FontSize="13" Text="Low" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
+            <TextBlock  HorizontalAlignment="Left" Margin="10,106,0,0" TextWrapping="Wrap" FontSize="13" Text="Level" FontFamily="Helvetica" VerticalAlignment="Top" Height="22" Width="35" Foreground="DimGray" RenderTransformOrigin="0.429,1.409"/>
+            <TextBlock Name="Level" HorizontalAlignment="Left" Margin="124,106,0,0" TextWrapping="Wrap" FontSize="13" Text="Low" FontFamily="Helvetica" VerticalAlignment="Top" Height="23" Width="77" Foreground="DimGray" RenderTransformOrigin="0.619,3.043"/>
 
         </Grid>
 

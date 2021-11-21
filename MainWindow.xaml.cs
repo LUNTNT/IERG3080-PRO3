@@ -50,14 +50,13 @@ namespace MainWindow
 
         private void ProblemTab_Click(object sender, RoutedEventArgs e)
         {
-            ProblemTabForAdmin.ProblemTabForAdmin problemTab = new ProblemTabForAdmin.ProblemTabForAdmin();
-            Tab.Content = new ProblemTabForAdmin.ProblemTabForAdmin();
+            Tab.Content = new ProblemTabForAdmin.ProblemTabForAdmin(UserInfo);
         }
 
         private void RecordTab_Click(object sender, RoutedEventArgs e)
         {
-            RecordTab.RecordTab recordtab = new RecordTab.RecordTab();
-            Tab.Content = new RecordTab.RecordTab();
+            RecordTab.RecordTab recordtab = new RecordTab.RecordTab(UserInfo);
+            Tab.Content = new RecordTab.RecordTab(UserInfo);
 
         }
         private void StatisticTab_Click(object sender, RoutedEventArgs e)
@@ -71,41 +70,4 @@ namespace MainWindow
 
 
 
-    public class JudgeSystem
-    {
-        //After done front end and put into it
-        protected ProblemSystem.ProgramProblem problems = new ProblemSystem.ProgramProblem();
-        protected Submission.AllSubmission submission = new Submission.AllSubmission();
-
-        public JudgeSystem() { } // constructor
-
-
-        public void logout()
-        {
-            load_login_page();
-
-        }
-
-        public List<Model.Problems> browse_problem_list()
-        {
-            return problems.AllProblems;
-        }
-
-        public List<Model.Problems> browse_problem(string problemID)
-        {
-            return problems.SelectProblem(problemID);
-        }
-
-
-
-        public List<Model.Submissions> browse_records() {
-            return submission.AllSubmissions;
-        }
-
-
-        public void browse_statistics() { }
-
-
-        public void load_login_page() { }
-    }
 }
