@@ -114,7 +114,7 @@ namespace UploadProblem
                 uploadproblems.testOutput = new string[CaseBox.Items.Count];
                 for (int i = 0; i < CaseBox.Items.Count; i++)
                 {
-                    string[] temp = CaseBox.Items[i].ToString().Split(' ');
+                    string[] temp = CaseBox.Items[i].ToString().Split('~');
                     uploadproblems.testInput[i] = temp[0];
                     uploadproblems.testOutput[i] = temp[1];
                 }

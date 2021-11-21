@@ -30,7 +30,7 @@ namespace Judger
                 if (problem.testInput[i] == "None")
                     result[i] = JudgeCase(language, subID, problem.testOutput[i]);
                 else 
-                    result[i] = JudgeCase(language, subID, problem.testOutput[i], problem.testOutput[i]);
+                    result[i] = JudgeCase(language, subID, problem.testInput[i], problem.testOutput[i]);
 
                 if (result[i] == "Wrong")
                     return result[i];
@@ -51,7 +51,7 @@ namespace Judger
                 if (problem.testInput[i] == "None")
                     result[i] = JudgeCase(language, subID, filename, "",  problem.testOutput[i]);
                 else
-                    result[i] = JudgeCase(language, subID, filename, problem.testOutput[i], problem.testOutput[i]);
+                    result[i] = JudgeCase(language, subID, filename, problem.testInput[i], problem.testOutput[i]);
 
                 if (result[i] == "Wrong")
                     return result[i];
@@ -139,7 +139,7 @@ namespace Judger
             run_proc.StartInfo.UseShellExecute = false;
             run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             run_proc.StartInfo.FileName = "cmd.exe";
-            run_proc.StartInfo.Arguments = @RunArguments;
+            run_proc.StartInfo.Arguments = RunArguments;
 
             //Run start and input the string
             run_proc.Start();
@@ -184,7 +184,7 @@ namespace Judger
             run_proc.StartInfo.UseShellExecute = false;
             run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             run_proc.StartInfo.FileName = "cmd.exe";
-            run_proc.StartInfo.Arguments = @RunArguments;
+            run_proc.StartInfo.Arguments = RunArguments;
 
             //Run start and input the string
             run_proc.Start();
@@ -207,7 +207,7 @@ namespace Judger
 
             string WorkingDirectory = "./SubmissionFiles/" + subID;
             string CompileArguments = "/c javac " + filename + ".java";
-            string RunArguments = "-classpath " + WorkingDirectory + " " + filename;
+            string RunArguments = "java -classpath " + @WorkingDirectory + " " + filename;
 
 
             //Compile Command 
@@ -216,7 +216,7 @@ namespace Judger
             compile_proc.StartInfo.CreateNoWindow = true;
             compile_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             compile_proc.StartInfo.FileName = "cmd.exe";
-            compile_proc.StartInfo.Arguments = @CompileArguments;
+            compile_proc.StartInfo.Arguments = CompileArguments;
 
             //Compile start
             compile_proc.Start();
@@ -228,8 +228,8 @@ namespace Judger
             run_proc.StartInfo.UseShellExecute = false;
             run_proc.StartInfo.CreateNoWindow = true;
             run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
-            run_proc.StartInfo.FileName = "java";
-            run_proc.StartInfo.Arguments = @RunArguments;
+            run_proc.StartInfo.FileName = "cmd.exe";
+            run_proc.StartInfo.Arguments = RunArguments;
 
             //Run start and input the string
             run_proc.Start();

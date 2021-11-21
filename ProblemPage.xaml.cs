@@ -22,6 +22,7 @@ namespace ProblemPage
     public partial class ProblemPage : Page
     {
         protected string userID;
+        protected string textline;
 
         protected Judger.Judge Judge = new Judger.Judge();
         protected Submission.AllSubmission submission = new Submission.AllSubmission();
@@ -96,8 +97,13 @@ namespace ProblemPage
         {
             string submissionID = submissionFiles.generateID();
             saveFile(submissionID, LanguageComboBox.SelectedItem.ToString());
+            string result;
 
-            string result = Judge.JudgeProblem(LanguageComboBox.SelectedItem.ToString(), submissionID, selectedProblem);
+            if (LanguageComboBox.SelectedItem.ToString() != "Java")
+                result = Judge.JudgeProblem(LanguageComboBox.SelectedItem.ToString(), submissionID, selectedProblem);
+            else
+                result = Judge.JudgeProblem(LanguageComboBox.SelectedItem.ToString(), submissionID, textline, selectedProblem);
+
             showresult.Content = result;
 
             submission.CreateSubmission(submissionID, userID, selectedProblem.ID, LanguageComboBox.SelectedItem.ToString(), result);
@@ -115,7 +121,7 @@ namespace ProblemPage
                 savePath += submissionID + ".cpp";
             else if (fileType == "Java")
             {
-                string textline = findText();
+                textline = findText();
 
                 if (textline == "") 
                 {
