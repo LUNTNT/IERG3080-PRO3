@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Controls.DataVisualization.Charting;
 using System.Collections.ObjectModel;
 using ICSharpCode.AvalonEdit;
+using System.Windows.Forms;
 
 namespace ProblemPage
 {
@@ -100,7 +101,7 @@ namespace ProblemPage
             showresult.Content = result;
 
             submission.CreateSubmission(submissionID, userID, selectedProblem.ID, LanguageComboBox.SelectedItem.ToString(), result);
-            MessageBox.Show("Done for submission. Your result is " + result);
+            System.Windows.MessageBox.Show("Done for submission. Your result is " + result);
 
             
         }
@@ -118,7 +119,7 @@ namespace ProblemPage
 
                 if (textline == "") 
                 {
-                    MessageBox.Show("Public Class Not Found!");
+                    System.Windows.Forms.MessageBox.Show("Public Class Not Found!");
                     return;
                 }
                 else
@@ -146,6 +147,21 @@ namespace ProblemPage
                     return textline;
             }
             return "";
+        }
+
+        private void UploadProblem_Click(object sender, RoutedEventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "Python|*.py|Java|*.java|C|*.c|C++|*.cpp" })
+            {
+                if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string filename = openFileDialog.FileName;
+                    string text = System.IO.File.ReadAllText(filename);
+                    textEditor.Text = text;
+
+
+                }
+            }
         }
     }
 }

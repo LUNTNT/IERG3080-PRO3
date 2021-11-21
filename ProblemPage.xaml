@@ -54,6 +54,7 @@
                 FontSize="10pt" Margin="0,51,10,32" HorizontalAlignment="Right" Width="843"/>
             <Label Name="showresult" HorizontalAlignment="Left" Height="25" Margin="17,249,0,0" VerticalAlignment="Top" Width="151" Background="AliceBlue"/>
             <Button Name="SubmitProblem" Margin="784,21,10,0"  Content="Submit" Click="SubmitProblem_Click" Height="25" VerticalAlignment="Top" Background="AliceBlue" ></Button>
+            <Button x:Name="UploadProblem" Margin="674,21,118.4,0"  Content="Upload" Height="25" VerticalAlignment="Top" Background="AliceBlue" Click="UploadProblem_Click" />
 
         </Grid>
 
