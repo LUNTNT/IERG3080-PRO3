@@ -21,25 +21,22 @@ namespace EditProblem
     {
 
         protected Model.Problems uploadproblems = new Model.Problems();
+        protected List<Model.Problems> Allproblems = new List<Model.Problems>();
+
         protected Database.ProblemCol ProblemCol = new Database.ProblemCol();
 
-        public EditProblem(string userID)
+        public EditProblem(List<Model.Problems> Allproblems)
         {
             InitializeComponent();
-            uploadproblems.author = userID;
-         
-            ProblemTitle.Text = uploadproblems.title;
-            ProblemDescription.Text = uploadproblems.description;
-            InputDescrip.Text = uploadproblems.inputContent;
-            OutputDescrip.Text = uploadproblems.outputContent;
-            ProblemSInput.Text = uploadproblems.inputSample;
-            ProblemSOutput.Text = uploadproblems.outputSample;
-            Problemlevel.SelectedItem = uploadproblems.difficulty;
-
-            for (int i = 0; i < uploadproblems.testInput.Length; i++)
+            this.Allproblems = Allproblems;
+            for (int i = 0; i < Allproblems.Count; i++)
             {
-                CaseBox.Items.Add(uploadproblems.testInput[i] + " " + uploadproblems.testOutput[i]);
+                Problems.Items.Add(Allproblems[i].title);
             }
+
+            Problemlevel.Items.Add("Easy");
+            Problemlevel.Items.Add("Medium");
+            Problemlevel.Items.Add("Hard");
 
         }
 
@@ -119,9 +116,8 @@ namespace EditProblem
                 }
             }
 
-            bool result = ProblemCol.InsertOne(uploadproblems);
-            if (result == false)
-                MessageBox.Show("Problem ID is existed.. ");
+            var result  = ProblemCol.UpdateOne(uploadproblems);
+            MessageBox.Show(result.Result.ToString());
 
         }
 
@@ -133,6 +129,25 @@ namespace EditProblem
         private void DeleteCase_Click(object sender, RoutedEventArgs e)
         {
             CaseBox.Items.Remove(CaseBox.SelectedItem);
+        }
+
+        private void Problems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CaseBox.Items.Clear();
+            uploadproblems = Allproblems[Problems.SelectedIndex];
+
+            ProblemTitle.Text = uploadproblems.title;
+            ProblemDescription.Text = uploadproblems.description;
+            InputDescrip.Text = uploadproblems.inputContent;
+            OutputDescrip.Text = uploadproblems.outputContent;
+            ProblemSInput.Text = uploadproblems.inputSample;
+            ProblemSOutput.Text = uploadproblems.outputSample;
+            Problemlevel.SelectedItem = uploadproblems.difficulty;
+
+            for (int i = 0; i < uploadproblems.testInput.Length; i++)
+            {
+                CaseBox.Items.Add(uploadproblems.testInput[i] + " " + uploadproblems.testOutput[i]);
+            }
         }
     }
 }

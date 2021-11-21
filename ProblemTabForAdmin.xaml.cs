@@ -57,7 +57,7 @@ namespace ProblemTabForAdmin
         }
         private void EditProblem_Click(object sender, RoutedEventArgs e)
         {
-            EditProblem.EditProblem edit = new EditProblem.EditProblem(UserInfo.userID);
+            EditProblem.EditProblem edit = new EditProblem.EditProblem(AllList.ToList<Model.Problems>());
             edit.Show();
         }
 

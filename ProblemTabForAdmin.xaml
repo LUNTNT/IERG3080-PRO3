@@ -58,7 +58,7 @@
 
             </DataGrid>
             <Button Name="UploadProblem" Content="Upload Problem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="1110,15,0,0" Height="29" Click="UploadProblem_Clck" RenderTransformOrigin="0.903,0.312" Background="AliceBlue" FontSize="15"/>
-            <Button Name="EditProblem" Content="Edit Problem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="954,15,0,0" Height="29" RenderTransformOrigin="0.903,0.312" Background="AliceBlue" FontSize="15"/>
+            <Button Name="EditProblem" Content="Edit Problem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="954,15,0,0" Height="29" Click="EditProblem_Click" RenderTransformOrigin="0.903,0.312" Background="AliceBlue" FontSize="15"/>
 
         </Grid>
         <Frame x:Name="Main" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Navigated="Main_Navigated" Height="594" VerticalAlignment="Top"/>
