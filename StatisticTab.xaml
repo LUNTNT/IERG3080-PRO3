@@ -39,14 +39,14 @@
 
                     <DataGridTextColumn Width="150" Binding="{Binding }" >
                         <DataGridTextColumn.Header >
-                            <TextBlock FontSize="15" Text="Correct" Width="144" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" />
+                            <TextBlock FontSize="15" Text="Correct Rate" Width="144" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" />
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
 
 
                     <DataGridTextColumn Width="150" Binding="{Binding }" >
                         <DataGridTextColumn.Header >
-                            <TextBlock FontSize="15" Text="Wrong" Width="144" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" />
+                            <TextBlock FontSize="15" Text="Wrong Rate" Width="144" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray" />
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
                     
