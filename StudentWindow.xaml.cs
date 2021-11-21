@@ -54,6 +54,8 @@ namespace StudentWindow
         }
         private void RecordTab_Click(object sender, RoutedEventArgs e)
         {
+            RecordTab.RecordTab recordtab = new RecordTab.RecordTab(UserInfo);
+            Tab.Content = recordtab;
         }
 
 
