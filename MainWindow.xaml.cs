@@ -58,7 +58,7 @@ namespace MainWindow
         private void RecordTab_Click(object sender, RoutedEventArgs e)
         {
             RecordTab.RecordTab recordtab = new RecordTab.RecordTab(UserInfo);
-            Tab.Content = new RecordTab.RecordTab(UserInfo);
+            Tab.Content = recordtab;
 
         }
         private void StatisticTab_Click(object sender, RoutedEventArgs e)

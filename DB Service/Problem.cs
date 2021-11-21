@@ -31,15 +31,15 @@ namespace ProblemSystem
         {
             ProblemColl.UpdateOne(problem);
         }
-        public void edit_statistics(string problemID) 
+/*        public void edit_statistics(string problemID) 
         {         
-            double newAC = submit.ProblemACRate(problemID);
+            double newAC = submit.ProblemACRate(list);
 
             List<Model.Problems> UpdataProblem = SelectProblem(problemID);
             UpdataProblem[0].acRate = newAC;
             edit_problem(UpdataProblem[0]);
 
-        }
+        }*/
 
         public void edit_testcases(string inputFile, string outputFile)
         {

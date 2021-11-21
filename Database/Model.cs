@@ -57,6 +57,18 @@ namespace Model
         public string author { get; set; }
     }
 
+    public class ProblemStat
+    {
+        public string problemID { get; set; }
+        public string problemTitle { get; set; }
+        public double acRate { get; set; }
+
+        public int attempts { get; set; }
+        public int correct { get; set; }
+        public int wrong { get; set; }
+        public int compile_error { get; set; }
+    }
+
     public class PiePoint
     {
         public string Name { get; set; }

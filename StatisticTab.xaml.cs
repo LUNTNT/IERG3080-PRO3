@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace StatisticTab
 {
@@ -20,9 +21,20 @@ namespace StatisticTab
     /// </summary>
     public partial class StatisticTab : Page
     {
+        protected ProblemStats.ProblemStat ProblemStat = new ProblemStats.ProblemStat();
+
+        public ObservableCollection<Model.ProblemStat> AllList = new ObservableCollection<Model.ProblemStat>();
+        protected Model.ProblemStat problemStat = new Model.ProblemStat();
+
         public StatisticTab(Model.Users UserInfo)
         {
             InitializeComponent();
+
+            List<Model.ProblemStat> list_problem = ProblemStat.GetProblemStat();
+            foreach (Model.ProblemStat temp1 in list_problem)
+                AllList.Add(temp1);
+
+            dataGrid.ItemsSource = AllList;
         }
     }
 }

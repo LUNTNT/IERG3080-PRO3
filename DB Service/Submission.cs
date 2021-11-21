@@ -20,27 +20,29 @@ namespace Submission
         }
         public List<Model.Submissions> AllSubmissionsOfProblem(string problemID)
         {
-            return SubmissionColl.GetOneByID(problemID);
+            return SubmissionColl.GetOneByProblem(problemID);
         }
         public List<Model.Submissions> SelectSubmissionsOfStudent(string userID)
         {
-            return SubmissionColl.GetOneByID(userID);
+            return SubmissionColl.GetOneByUser(userID);
         }
 
         public AllSubmission() { }
 
-        public double ProblemACRate(string problemID)
-        {
-            List<Model.Submissions> ProblemSub = AllSubmissionsOfProblem(problemID);
+        public double ProblemACRate(List<Model.Submissions> list)
+        {       
+            if (list.Count == 0)
+                return 0;
+
             int ACcount = 0;
 
-            for (int i = 0; i < ProblemSub.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                if (ProblemSub[i].result == "Correct")
+                if (list[i].result == "Correct")
                     ACcount++;
             }
 
-            return ACcount / ProblemSub.Count;
+            return (ACcount / list.Count);
         }
 
         public List<string> SelectSolvedProblemByStudent(string userID)
