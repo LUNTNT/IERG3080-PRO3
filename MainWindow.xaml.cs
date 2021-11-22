@@ -26,10 +26,9 @@ namespace MainWindow
 {
     public partial class MainWindow : Window
     {
-        //protected JudgeSystem JudgeSystem = new JudgeSystem();
-        public Model.Users UserInfo = new Model.Users();
+        protected Model.Users UserInfo = new Model.Users();
 
-        //public ObservableCollection<Model.Problems> AllList = new ObservableCollection<Model.Problems>();
+        protected ProblemStats.ProblemStat initStat = new ProblemStats.ProblemStat();
 
 
         public MainWindow(Model.Users UserInfo)
@@ -38,7 +37,7 @@ namespace MainWindow
             this.UserInfo = UserInfo;
 
             Username.Text = UserInfo.name;
-
+            initStat.GetProblemStat();
 
         }
 

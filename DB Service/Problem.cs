@@ -18,6 +18,7 @@ namespace ProblemSystem
 
         public List<Model.Problems> AllProblems
         {
+            set { }
             get { return ProblemColl.GetAll(); } // Byte to MB
         }
         public List<Model.Problems> SelectProblem(string problemID)

@@ -22,8 +22,11 @@ namespace EditProblem
 
         protected Model.Problems uploadproblems = new Model.Problems();
         protected List<Model.Problems> Allproblems = new List<Model.Problems>();
+        protected List<Model.Submissions> submissionsOfProblem = new List<Model.Submissions>(); 
 
         protected Database.ProblemCol ProblemCol = new Database.ProblemCol();
+        protected Submission.AllSubmission AllSubmission = new Submission.AllSubmission();
+        protected Judger.Judge Judge = new Judger.Judge();
 
         public EditProblem(List<Model.Problems> Allproblems)
         {
@@ -43,6 +46,8 @@ namespace EditProblem
 
         private void Upload_Click(object sender, RoutedEventArgs e)
         {
+            submissionsOfProblem = AllSubmission.AllSubmissionsOfProblem(uploadproblems.ID);
+
             if (ProblemTitle.Text == "")
             {
                 MessageBox.Show("Fill in all boxes.");
@@ -117,6 +122,14 @@ namespace EditProblem
             }
 
             var result  = ProblemCol.UpdateOne(uploadproblems);
+            for (int i = 0; i < submissionsOfProblem.Count; i++)
+            {
+                if (submissionsOfProblem[i].language != "Java")
+                    submissionsOfProblem[i].result = Judge.JudgeProblem(submissionsOfProblem[i].language, submissionsOfProblem[i].submissionID, uploadproblems);
+                else
+                    submissionsOfProblem[i].result = Judge.JudgeProblem(submissionsOfProblem[i].language, submissionsOfProblem[i].submissionID, submissionsOfProblem[i].filename, uploadproblems);
+            }
+
             MessageBox.Show(result.Result.ToString());
 
         }

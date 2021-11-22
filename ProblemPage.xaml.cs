@@ -105,8 +105,10 @@ namespace ProblemPage
                 result = Judge.JudgeProblem(LanguageComboBox.SelectedItem.ToString(), submissionID, textline, selectedProblem);
 
             showresult.Content = result;
-
-            submission.CreateSubmission(submissionID, userID, selectedProblem.ID, LanguageComboBox.SelectedItem.ToString(), result);
+            if (LanguageComboBox.SelectedItem.ToString() != "Java")
+                submission.CreateSubmission(submissionID, userID, selectedProblem.ID, LanguageComboBox.SelectedItem.ToString(), result, submissionID);
+            else
+                submission.CreateSubmission(submissionID, userID, selectedProblem.ID, LanguageComboBox.SelectedItem.ToString(), result, textline);
             System.Windows.MessageBox.Show("Done for submission. Your result is " + result);
 
             

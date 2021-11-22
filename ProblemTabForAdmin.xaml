@@ -36,7 +36,7 @@
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
 
-                    <DataGridTextColumn Width="180" Binding="{Binding acRate}">
+                    <DataGridTextColumn Width="180" Binding="{Binding acRateStr}">
                         <DataGridTextColumn.Header >
                             <TextBlock FontSize="15" Text="AC Rate" Width="92" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                         </DataGridTextColumn.Header>

@@ -33,6 +33,7 @@ namespace Model
         public int memoryLimit { get; set; }
 
         public double acRate { get; set; }
+        public string acRateStr { get; set; }
         public string[] tags { get; set; }
 
         public bool isLive { get; set; }
@@ -55,6 +56,7 @@ namespace Model
         public string result { get; set; }
 
         public string author { get; set; }
+        public string filename { get; set; }
     }
 
     public class ProblemStat
@@ -62,6 +64,7 @@ namespace Model
         public string problemID { get; set; }
         public string problemTitle { get; set; }
         public double acRate { get; set; }
+        public string acRateStr { get; set; }
 
         public int attempts { get; set; }
         public int correct { get; set; }

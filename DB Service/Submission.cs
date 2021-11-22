@@ -61,7 +61,7 @@ namespace Submission
             return SolvedProblem;
         }
 
-        public bool CreateSubmission(string submissionID, string userID, string problemID, string language, string result)
+        public bool CreateSubmission(string submissionID, string userID, string problemID, string language, string result, string filename)
         {
             Model.Submissions NewSubmit = new Model.Submissions() ;
 
@@ -72,6 +72,7 @@ namespace Submission
 
             NewSubmit.language = language;
             NewSubmit.result = result;
+            NewSubmit.filename = filename;
 
             DateTime nowtime = DateTime.Now;
             NewSubmit.time = nowtime.ToString();

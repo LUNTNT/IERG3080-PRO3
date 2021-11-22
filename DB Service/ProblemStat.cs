@@ -29,13 +29,24 @@ namespace ProblemStats
 
                 temp.problemID = Allproblem[i].ID;
                 temp.problemTitle = Allproblem[i].title;
-                temp.acRate = allSubmission.ProblemACRate(submissiontemp);
                 Allproblem[i].acRate = allSubmission.ProblemACRate(submissiontemp);
 
                 temp.correct = getResultCount("Correct", submissiontemp);
                 temp.wrong = getResultCount("Wrong", submissiontemp);
                 temp.compile_error = getResultCount("Compile Error", submissiontemp);
                 temp.attempts = submissiontemp.Count;
+
+                if (temp.attempts != 0)
+                    temp.acRate = (double)temp.correct / (double)temp.attempts;
+                else
+                    temp.acRate = 0;
+
+                Allproblem[i].acRate = temp.acRate;
+
+                temp.acRateStr = temp.acRate.ToString("P");
+                Allproblem[i].acRateStr = temp.acRate.ToString("P");
+                programProblem.edit_problem(Allproblem[i]);
+                
 
                 problemstat.Add(temp);
             }
