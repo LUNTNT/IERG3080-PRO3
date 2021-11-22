@@ -129,7 +129,7 @@ namespace UploadProblem
 
         private void AddCase_Click(object sender, RoutedEventArgs e)
         {
-            CaseBox.Items.Add(InputCase.Text + " " + OutputCase.Text);
+            CaseBox.Items.Add(InputCase.Text + "~" + OutputCase.Text);
         }
 
         private void DeleteCase_Click(object sender, RoutedEventArgs e)

@@ -79,7 +79,11 @@ namespace Submission
 
             return SubmissionColl.InsertOne(NewSubmit);
             
-    }
+        }
+        public void edit_submission(Model.Submissions submission)
+        {
+            SubmissionColl.UpdateOne(submission);
+        }
     }
 
     public class SubmissionFiles

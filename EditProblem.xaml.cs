@@ -27,6 +27,7 @@ namespace EditProblem
         protected Database.ProblemCol ProblemCol = new Database.ProblemCol();
         protected Submission.AllSubmission AllSubmission = new Submission.AllSubmission();
         protected Judger.Judge Judge = new Judger.Judge();
+        protected ProblemStats.ProblemStat updateRate = new ProblemStats.ProblemStat();
 
         public EditProblem(List<Model.Problems> Allproblems)
         {
@@ -128,15 +129,21 @@ namespace EditProblem
                     submissionsOfProblem[i].result = Judge.JudgeProblem(submissionsOfProblem[i].language, submissionsOfProblem[i].submissionID, uploadproblems);
                 else
                     submissionsOfProblem[i].result = Judge.JudgeProblem(submissionsOfProblem[i].language, submissionsOfProblem[i].submissionID, submissionsOfProblem[i].filename, uploadproblems);
+
+                AllSubmission.edit_submission(submissionsOfProblem[i]);
             }
 
-            MessageBox.Show(result.Result.ToString());
+            updateRate.GetProblemStat();
+            var ClickOk = MessageBox.Show(result.Result.ToString(), "Done for editing problem",MessageBoxButton.OK);
+            if (ClickOk == MessageBoxResult.OK)
+                this.Close();
+
 
         }
 
         private void AddCase_Click(object sender, RoutedEventArgs e)
         {
-            CaseBox.Items.Add(InputCase.Text + " " + OutputCase.Text);
+            CaseBox.Items.Add(InputCase.Text + "~" + OutputCase.Text);
         }
 
         private void DeleteCase_Click(object sender, RoutedEventArgs e)
