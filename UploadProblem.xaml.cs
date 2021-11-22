@@ -124,7 +124,11 @@ namespace UploadProblem
             if (result == false)
                 MessageBox.Show("Problem ID is existed.. ");
             else
-                MessageBox.Show("Problem uploaded.");
+            {
+                var ClickOk = MessageBox.Show("Problem uploaded.", "Done for uploading problem", MessageBoxButton.OK);
+                if (ClickOk == MessageBoxResult.OK)
+                    this.Close();
+            }
         }
 
         private void AddCase_Click(object sender, RoutedEventArgs e)
