@@ -102,13 +102,14 @@ namespace ProblemPage
             if (LanguageComboBox.SelectedItem.ToString() != "Java")
                 result = Judge.JudgeProblem(LanguageComboBox.SelectedItem.ToString(), submissionID, selectedProblem);
             else
-                result = Judge.JudgeProblem(LanguageComboBox.SelectedItem.ToString(), submissionID, textline, selectedProblem);
+                result = Judge.JudgeProblem(LanguageComboBox.SelectedItem.ToString(), submissionID, submissionFiles.GetJavaFileName(textline), selectedProblem);
 
             showresult.Content = result;
             if (LanguageComboBox.SelectedItem.ToString() != "Java")
                 submission.CreateSubmission(submissionID, userID, selectedProblem.ID, LanguageComboBox.SelectedItem.ToString(), result, submissionID);
             else
-                submission.CreateSubmission(submissionID, userID, selectedProblem.ID, LanguageComboBox.SelectedItem.ToString(), result, textline);
+                submission.CreateSubmission(submissionID, userID, selectedProblem.ID, LanguageComboBox.SelectedItem.ToString(), result, submissionFiles.GetJavaFileName(textline));
+
             System.Windows.MessageBox.Show("Done for submission. Your result is " + result);
 
             

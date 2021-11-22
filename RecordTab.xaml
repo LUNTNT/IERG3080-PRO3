@@ -39,7 +39,7 @@
                         </DataGridTextColumn.Header>
                     </DataGridTextColumn>
                     
-                    <DataGridTextColumn  Binding="{Binding author}">
+                    <DataGridTextColumn  Binding="{Binding userID}">
                         <DataGridTextColumn.Header  >
                             <TextBlock FontSize="15" Text="Author" Width="90" HorizontalAlignment="Stretch" TextAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" Foreground="DimGray"/>
                         </DataGridTextColumn.Header>

@@ -207,7 +207,7 @@ namespace Judger
 
             string WorkingDirectory = "./SubmissionFiles/" + subID;
             string CompileArguments = "/c javac " + filename + ".java";
-            string RunArguments = "java -classpath " + @WorkingDirectory + " " + filename;
+            string RunArguments = @"/c java -classpath " + @WorkingDirectory + " " + filename;
 
 
             //Compile Command 
@@ -227,21 +227,22 @@ namespace Judger
             run_proc.StartInfo.RedirectStandardInput = true;
             run_proc.StartInfo.UseShellExecute = false;
             run_proc.StartInfo.CreateNoWindow = true;
-            run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
+            //run_proc.StartInfo.WorkingDirectory = @WorkingDirectory;
             run_proc.StartInfo.FileName = "cmd.exe";
-            run_proc.StartInfo.Arguments = RunArguments;
+            run_proc.StartInfo.Arguments = @RunArguments;
 
             //Run start and input the string
             run_proc.Start();
             run_proc.StandardInput.WriteLine(input);
+
+
             string outputRun = run_proc.StandardOutput.ReadToEnd();
             run_proc.WaitForExit();
 
-
-            if (outputRun.Length == 0)
-                return "Compile Error";
             if (outputRun.Contains(output))
                 return "Correct";
+            if (outputRun.Length == 0)
+                return "Compile Error";
             return "Wrong";
         }
 
