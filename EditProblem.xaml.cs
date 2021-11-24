@@ -123,7 +123,7 @@ namespace EditProblem
             }
 
             var result  = ProblemCol.UpdateOne(uploadproblems);
-            for (int i = 0; i < submissionsOfProblem.Count; i++)
+            /*for (int i = 0; i < submissionsOfProblem.Count; i++)
             {
                 if (submissionsOfProblem[i].language != "Java")
                     submissionsOfProblem[i].result = Judge.JudgeProblem(submissionsOfProblem[i].language, submissionsOfProblem[i].submissionID, uploadproblems);
@@ -131,7 +131,7 @@ namespace EditProblem
                     submissionsOfProblem[i].result = Judge.JudgeProblem(submissionsOfProblem[i].language, submissionsOfProblem[i].submissionID, submissionsOfProblem[i].filename, uploadproblems);
 
                 AllSubmission.edit_submission(submissionsOfProblem[i]);
-            }
+            }*/
 
             updateRate.GetProblemStat();
             var ClickOk = MessageBox.Show(result.Result.ToString(), "Done for editing problem",MessageBoxButton.OK);
