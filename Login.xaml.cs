@@ -55,7 +55,7 @@ namespace Login
             }
             else
             {
-                MessageBox.Show("Wrong UerID or Password");
+                MessageBox.Show("Wrong UserID or Password");
             }
         }
 
